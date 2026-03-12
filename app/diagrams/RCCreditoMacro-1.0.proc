@@ -3,7 +3,7 @@
   <process:MainProcess xmi:id="_qJnQMB05EfGvRZ4D8qyKHQ" name="RCCreditoMacro" bonitaModelVersion="9">
     <elements xmi:type="process:Pool" xmi:id="_qJnQMR05EfGvRZ4D8qyKHQ" name="Reconocimiento de Créditos">
       <elements xmi:type="process:Lane" xmi:id="_qJnQMh05EfGvRZ4D8qyKHQ" name="Macro Proceso" actor="_qJnQSx05EfGvRZ4D8qyKHQ">
-        <elements xmi:type="process:StartEvent" xmi:id="_qJnQMx05EfGvRZ4D8qyKHQ" name="Inicio Convocatoria" outgoing="_qJnQSB05EfGvRZ4D8qyKHQ">
+        <elements xmi:type="process:StartEvent" xmi:id="_qJnQMx05EfGvRZ4D8qyKHQ" name="Inicio Reconocimiento Créditos" outgoing="_qJnQSB05EfGvRZ4D8qyKHQ">
           <dynamicLabel xmi:type="expression:Expression" xmi:id="_qJnQNB05EfGvRZ4D8qyKHQ" name="" content="" returnTypeFixed="true"/>
           <dynamicDescription xmi:type="expression:Expression" xmi:id="_qJnQNR05EfGvRZ4D8qyKHQ" name="" content="" returnTypeFixed="true"/>
           <stepSummary xmi:type="expression:Expression" xmi:id="_qJnQNh05EfGvRZ4D8qyKHQ" name="" content="" returnTypeFixed="true"/>
@@ -53,7 +53,7 @@
           <contract xmi:type="process:Contract" xmi:id="_4uCRCR07EfGvRZ4D8qyKHQ"/>
           <expectedDuration xmi:type="expression:Expression" xmi:id="_4uCRDB07EfGvRZ4D8qyKHQ" name="" content="" returnType="java.lang.Long" returnTypeFixed="true"/>
         </elements>
-        <elements xmi:type="process:EndEvent" xmi:id="_BlRiAB09EfGvRZ4D8qyKHQ" name="Fin Reconocimiento" incoming="_Dwk78B09EfGvRZ4D8qyKHQ">
+        <elements xmi:type="process:EndEvent" xmi:id="_BlRiAB09EfGvRZ4D8qyKHQ" name="Fin Reconocimiento Créditos" incoming="_Dwk78B09EfGvRZ4D8qyKHQ">
           <dynamicLabel xmi:type="expression:Expression" xmi:id="_BlRiAh09EfGvRZ4D8qyKHQ" name="" content="" returnTypeFixed="true"/>
           <dynamicDescription xmi:type="expression:Expression" xmi:id="_BlRiAR09EfGvRZ4D8qyKHQ" name="" content="" returnTypeFixed="true"/>
           <stepSummary xmi:type="expression:Expression" xmi:id="_BlRiAx09EfGvRZ4D8qyKHQ" name="" content="" returnTypeFixed="true"/>
