@@ -53,7 +53,7 @@
           <contract xmi:type="process:Contract" xmi:id="_4uCRCR07EfGvRZ4D8qyKHQ"/>
           <expectedDuration xmi:type="expression:Expression" xmi:id="_4uCRDB07EfGvRZ4D8qyKHQ" name="" content="" returnType="java.lang.Long" returnTypeFixed="true"/>
         </elements>
-        <elements xmi:type="process:EndEvent" xmi:id="_BlRiAB09EfGvRZ4D8qyKHQ" name="Fin Reconocimiento Créditos" incoming="_Dwk78B09EfGvRZ4D8qyKHQ">
+        <elements xmi:type="process:EndEvent" xmi:id="_BlRiAB09EfGvRZ4D8qyKHQ" name="Reconocimiento Créditos Otorgado" incoming="_Dwk78B09EfGvRZ4D8qyKHQ">
           <dynamicLabel xmi:type="expression:Expression" xmi:id="_BlRiAh09EfGvRZ4D8qyKHQ" name="" content="" returnTypeFixed="true"/>
           <dynamicDescription xmi:type="expression:Expression" xmi:id="_BlRiAR09EfGvRZ4D8qyKHQ" name="" content="" returnTypeFixed="true"/>
           <stepSummary xmi:type="expression:Expression" xmi:id="_BlRiAx09EfGvRZ4D8qyKHQ" name="" content="" returnTypeFixed="true"/>
@@ -146,7 +146,7 @@
               <children xmi:type="notation:DecorationNode" xmi:id="_BlSwIh09EfGvRZ4D8qyKHQ" type="5025">
                 <layoutConstraint xmi:type="notation:Location" xmi:id="_BlSwIx09EfGvRZ4D8qyKHQ" y="5"/>
               </children>
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_BlSwIR09EfGvRZ4D8qyKHQ" x="783" y="75"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_BlSwIR09EfGvRZ4D8qyKHQ" x="802" y="75"/>
             </children>
           </children>
           <styles xmi:type="notation:DescriptionStyle" xmi:id="_qJn3TR05EfGvRZ4D8qyKHQ"/>
