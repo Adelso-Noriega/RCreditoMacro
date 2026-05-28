@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<applications xmlns="http://documentation.bonitasoft.com/application-xml-schema/1.1">
+    <application homePage="homepage" layout="custompage_layoutBonita" theme="custompage_themeBonita" token="RCreditos" version="1.0" profile="User" state="ACTIVATED">
+        <displayName>Solicitud Reconocimiento De Créditos</displayName>
+        <applicationPages>
+            <applicationPage customPage="custompage_home" token="homepage"/>
+        </applicationPages>
+        <applicationMenus>
+            <applicationMenu>
+                <displayName>My menu</displayName>
+                <applicationMenus>
+                    <applicationMenu applicationPage="homepage">
+                        <displayName>Home</displayName>
+                    </applicationMenu>
+                </applicationMenus>
+            </applicationMenu>
+        </applicationMenus>
+    </application>
+</applications>

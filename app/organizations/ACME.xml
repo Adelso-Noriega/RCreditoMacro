@@ -547,11 +547,33 @@
       <enabled>true</enabled>
       <password encrypted="false">bpm</password>
     </user>
+    <user userName="Comision">
+      <firstName>Comisi&#xf3;n</firstName>
+      <lastName>RCC</lastName>
+      <manager>helen.kelly</manager>
+      <personalData/>
+      <professionalData/>
+      <password encrypted="false">bpm</password>
+      <customUserInfoValues/>
+    </user>
+    <user userName="Estudiante">
+      <firstName>Estudiante</firstName>
+      <lastName></lastName>
+      <personalData/>
+      <professionalData/>
+      <password encrypted="false">bpm</password>
+      <customUserInfoValues/>
+    </user>
   </users>
   <roles>
-    <role name="member">
-      <displayName>Member</displayName>
-      <description></description>
+    <role name="ComisionRCC">
+      <displayName>Comisi&#xf3;n RCC</displayName>
+    </role>
+    <role name="Estudiante">
+      <displayName>Estudiante</displayName>
+    </role>
+    <role name="Employee">
+      <displayName>Employee</displayName>
     </role>
   </roles>
   <groups>
@@ -607,132 +629,144 @@
       <displayName>Services</displayName>
       <description>This group represents the services department of the ACME organization</description>
     </group>
+    <group name="UA">
+      <displayName>U. Alicante</displayName>
+    </group>
   </groups>
   <memberships>
     <membership>
       <userName>william.jobs</userName>
-      <roleName>member</roleName>
+      <roleName>Employee</roleName>
       <groupName>acme</groupName>
     </membership>
     <membership>
       <userName>april.sanchez</userName>
-      <roleName>member</roleName>
+      <roleName>Employee</roleName>
       <groupName>hr</groupName>
       <groupParentPath>/acme</groupParentPath>
     </membership>
     <membership>
       <userName>helen.kelly</userName>
-      <roleName>member</roleName>
+      <roleName>Employee</roleName>
       <groupName>hr</groupName>
       <groupParentPath>/acme</groupParentPath>
     </membership>
     <membership>
       <userName>walter.bates</userName>
-      <roleName>member</roleName>
-      <groupName>hr</groupName>
-      <groupParentPath>/acme</groupParentPath>
+      <roleName>Employee</roleName>
+      <groupName>UA</groupName>
     </membership>
     <membership>
       <userName>zachary.williamson</userName>
-      <roleName>member</roleName>
+      <roleName>Employee</roleName>
       <groupName>finance</groupName>
       <groupParentPath>/acme</groupParentPath>
     </membership>
     <membership>
       <userName>patrick.gardenier</userName>
-      <roleName>member</roleName>
+      <roleName>Employee</roleName>
       <groupName>finance</groupName>
       <groupParentPath>/acme</groupParentPath>
     </membership>
     <membership>
       <userName>virginie.jomphe</userName>
-      <roleName>member</roleName>
+      <roleName>Employee</roleName>
       <groupName>finance</groupName>
       <groupParentPath>/acme</groupParentPath>
     </membership>
     <membership>
       <userName>thorsten.hartmann</userName>
-      <roleName>member</roleName>
+      <roleName>Employee</roleName>
       <groupName>finance</groupName>
       <groupParentPath>/acme</groupParentPath>
     </membership>
     <membership>
       <userName>jan.fisher</userName>
-      <roleName>member</roleName>
+      <roleName>Employee</roleName>
       <groupName>it</groupName>
       <groupParentPath>/acme</groupParentPath>
     </membership>
     <membership>
       <userName>isabel.bleasdale</userName>
-      <roleName>member</roleName>
+      <roleName>Employee</roleName>
       <groupName>marketing</groupName>
       <groupParentPath>/acme</groupParentPath>
     </membership>
     <membership>
       <userName>favio.riviera</userName>
-      <roleName>member</roleName>
+      <roleName>Employee</roleName>
       <groupName>marketing</groupName>
       <groupParentPath>/acme</groupParentPath>
     </membership>
     <membership>
       <userName>michael.morrison</userName>
-      <roleName>member</roleName>
+      <roleName>Employee</roleName>
       <groupName>production</groupName>
       <groupParentPath>/acme</groupParentPath>
     </membership>
     <membership>
       <userName>marc.marseau</userName>
-      <roleName>member</roleName>
+      <roleName>Employee</roleName>
       <groupName>rd</groupName>
       <groupParentPath>/acme/production</groupParentPath>
     </membership>
     <membership>
       <userName>joseph.hovell</userName>
-      <roleName>member</roleName>
+      <roleName>Employee</roleName>
       <groupName>rd</groupName>
       <groupParentPath>/acme/production</groupParentPath>
     </membership>
     <membership>
       <userName>mauro.zetticci</userName>
-      <roleName>member</roleName>
+      <roleName>Employee</roleName>
       <groupName>services</groupName>
       <groupParentPath>/acme/production</groupParentPath>
     </membership>
     <membership>
       <userName>thomas.wallis</userName>
-      <roleName>member</roleName>
+      <roleName>Employee</roleName>
       <groupName>services</groupName>
       <groupParentPath>/acme/production</groupParentPath>
     </membership>
     <membership>
       <userName>daniela.angelo</userName>
-      <roleName>member</roleName>
+      <roleName>Employee</roleName>
       <groupName>europe</groupName>
       <groupParentPath>/acme/sales</groupParentPath>
     </membership>
     <membership>
       <userName>misa.kumagai</userName>
-      <roleName>member</roleName>
+      <roleName>Employee</roleName>
       <groupName>asia</groupName>
       <groupParentPath>/acme/sales</groupParentPath>
     </membership>
     <membership>
       <userName>norio.yamazaki</userName>
-      <roleName>member</roleName>
+      <roleName>Employee</roleName>
       <groupName>asia</groupName>
       <groupParentPath>/acme/sales</groupParentPath>
     </membership>
     <membership>
       <userName>giovanna.almeida</userName>
-      <roleName>member</roleName>
+      <roleName>Employee</roleName>
       <groupName>latin_america</groupName>
       <groupParentPath>/acme/sales</groupParentPath>
     </membership>
     <membership>
       <userName>anthony.nichols</userName>
-      <roleName>member</roleName>
+      <roleName>Employee</roleName>
       <groupName>north_america</groupName>
       <groupParentPath>/acme/sales</groupParentPath>
+    </membership>
+    <membership>
+      <userName>Comision</userName>
+      <roleName>ComisionRCC</roleName>
+      <groupName>UA</groupName>
+    </membership>
+    <membership>
+      <userName>Estudiante</userName>
+      <roleName>Estudiante</roleName>
+      <groupName>UA</groupName>
     </membership>
   </memberships>
 </organization:Organization>

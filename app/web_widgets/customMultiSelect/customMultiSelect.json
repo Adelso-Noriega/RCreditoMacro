@@ -1,0 +1,71 @@
+{
+  "id" : "customMultiSelect",
+  "name" : "multiSelect",
+  "type" : "widget",
+  "custom" : true,
+  "modelVersion" : "2.6",
+  "lastUpdate" : 1778862335140,
+  "template" : "@customMultiSelect.tpl.html",
+  "controller" : "@customMultiSelect.ctrl.js",
+  "properties" : [
+    {
+      "label" : "Items",
+      "name" : "items",
+      "type" : "collection",
+      "bond" : "expression"
+    },
+    {
+      "label" : "Selected Values",
+      "name" : "selectedValues",
+      "type" : "text",
+      "defaultValue" : "[]",
+      "bond" : "variable"
+    },
+    {
+      "label" : "Label Key",
+      "name" : "labelKey",
+      "type" : "text",
+      "bond" : "constant"
+    },
+    {
+      "label" : "Value Key",
+      "name" : "valueKey",
+      "type" : "text",
+      "bond" : "constant"
+    },
+    {
+      "label" : "Placeholder",
+      "name" : "placeholder",
+      "type" : "text",
+      "bond" : "interpolation"
+    },
+    {
+      "label" : "Required",
+      "name" : "required",
+      "type" : "boolean",
+      "bond" : "constant"
+    },
+    {
+      "label" : "Show Selected",
+      "name" : "showSelected",
+      "type" : "boolean",
+      "bond" : "constant"
+    },
+    {
+      "label" : "Search Enabled",
+      "name" : "searchEnabled",
+      "type" : "boolean",
+      "bond" : "constant"
+    },
+    {
+      "label" : "Label",
+      "name" : "label",
+      "type" : "text",
+      "bond" : "interpolation"
+    }
+  ],
+  "assets" : [ ],
+  "requiredModules" : [ ],
+  "webResources" : [ ],
+  "hasHelp" : false
+}

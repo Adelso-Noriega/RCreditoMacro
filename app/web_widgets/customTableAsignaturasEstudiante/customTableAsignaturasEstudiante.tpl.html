@@ -1,0 +1,95 @@
+<!-- The custom widget template is defined here
+   - You can use standard HTML tags and AngularJS built-in directives, scope and interpolation system
+   - Custom widget properties defined on the right can be used as variables in a templates with properties.newProperty
+   - Functions exposed in the controller can be used with ctrl.newFunction()
+   - You can use the 'environment' property injected in the scope when inside the Editor whiteboard. It allows to define a mockup
+     of the Custom Widget to be displayed in the whiteboard only. By default the widget is represented by an auto-generated icon
+     and its name (See the <span> below).
+-->
+ 
+<div class="form-group tabla-asignaturas-widget">
+
+  <label class="control-label" ng-if="properties.label">
+    {{ properties.label }}
+  </label>
+  
+  <title size="h3">Asignaturas</title><br/>
+  
+  <button type="button"
+          class="btn btn-primary"
+          style="float: right;"
+          ng-click="addRow()">
+    Agregar Asignatura
+  </button>
+
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th style="width: 80px;"></th>
+        <th>Nombre de la asignatura</th>
+        <th>Facultad</th>
+        <th style="width: 150px;">Status</th>
+        <th style="width: 90px;"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr ng-repeat="row in properties.value track by $index">
+        <td>
+          <input type="text"
+                 class="form-control"
+                 ng-model="row.id"
+                 readonly>
+        </td>
+
+        <td>
+          <select class="form-control"
+                  ng-model="row.nombreAsignatura"
+                  ng-required="true">
+              <!-- ng-options="item.name as item.name for item in properties.asignaturas" -->
+            <option value="0" selected="true">Selecciones una asignatura</option>
+            <option value="1">C202-GRADO EN ARQUITECTURA (GRA)</option>
+            <option value="2">C206-GRADO EN ARQUITECTURA TÉCNICA (GRA)</option>
+            <option value="3">C207-GRADO EN FUNDAMENTOS DE LA ARQUITECTURA (GRA)</option>
+            <option value="4">C214-GRADO EN INGENIERÍA AEROESPACIAL (GRA)</option>
+          </select>
+        </td>
+
+        <td>
+          <select class="form-control"
+                  ng-model="row.facultad"
+                  ng-required="true">
+              <!-- ng-options="item.name as item.name for item in properties.facultades" -->
+            <option value="0" selected="true">Seleccione facultad</option>
+            <option value="1">Ingeniería</option>
+            <option value="2">Ciencias</option>
+          </select>
+        </td>
+
+        <td>
+          <select class="form-control"
+                  ng-model="row.status"
+                  ng-disabled="true">
+              <!-- ng-options="item.value as item.label for item in properties.statusOptions" -->
+            <option value="0" selected="true">Pendiente Revisión</option>
+          </select>
+        </td>
+
+        <td class="text-center">
+          <button type="button"
+                  class="btn btn-danger btn-sm"
+                  ng-click="removeRow($index)">
+            Eliminar
+          </button>
+        </td>
+      </tr>
+
+      <tr ng-if="!properties.value || properties.value.length === 0">
+        <td colspan="5" class="text-center text-muted">
+          No hay registros agregados
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>

@@ -1,0 +1,73 @@
+<!-- The custom widget template is defined here
+   - You can use standard HTML tags and AngularJS built-in directives, scope and interpolation system
+   - Custom widget properties defined on the right can be used as variables in a templates with properties.newProperty
+   - Functions exposed in the controller can be used with ctrl.newFunction()
+   - You can use the 'environment' property injected in the scope when inside the Editor whiteboard. It allows to define a mockup
+     of the Custom Widget to be displayed in the whiteboard only. By default the widget is represented by an auto-generated icon
+     and its name (See the <span> below).
+-->
+ 
+<div class="form-group tabla-integrantes-widget">
+
+  <label class="control-label">
+    {{ properties.label }}
+    <span ng-if="properties.required" class="text-danger">*</span>
+  </label>
+
+  <button type="button"
+          class="btn btn-primary"
+          style="float: right;"
+          ng-click="addRow()">
+    Agregar Integrante
+  </button>
+
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th style="width: 80px;">Id</th>
+        <th>Nombre del Integrante</th>
+        <th style="width: 90px;"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr ng-repeat="row in properties.value track by $index">
+
+        <!-- ID -->
+        <td>
+          <input type="text"
+                 class="form-control"
+                 ng-model="row.id"
+                 readonly>
+        </td>
+
+        <!-- NOMBRE INTEGRANTE -->
+        <td>
+          <input type="text"
+                 class="form-control"
+                 ng-model="row.nombreIntegrante"
+                 placeholder="Ingrese nombre del integrante"
+                 ng-required="properties.required">
+        </td>
+
+        <!-- ELIMINAR -->
+        <td class="text-center">
+          <button type="button"
+                  class="btn btn-danger btn-sm"
+                  ng-click="removeRow($index)">
+            Eliminar
+          </button>
+        </td>
+
+      </tr>
+
+      <tr ng-if="!properties.value || properties.value.length === 0">
+        <td colspan="3" class="text-center text-muted">
+          No hay integrantes agregados
+        </td>
+      </tr>
+
+    </tbody>
+  </table>
+
+</div>

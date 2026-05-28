@@ -1,0 +1,35 @@
+{
+  "id" : "customTablaIntegrantesComision",
+  "name" : "tablaIntegrantesComision",
+  "type" : "widget",
+  "custom" : true,
+  "modelVersion" : "2.6",
+  "lastUpdate" : 1779271475820,
+  "template" : "@customTablaIntegrantesComision.tpl.html",
+  "controller" : "@customTablaIntegrantesComision.ctrl.js",
+  "properties" : [
+    {
+      "label" : "Value",
+      "name" : "value",
+      "type" : "text",
+      "defaultValue" : "This is the initial value",
+      "bond" : "variable"
+    },
+    {
+      "label" : "Label",
+      "name" : "label",
+      "type" : "text",
+      "bond" : "interpolation"
+    },
+    {
+      "label" : "Required",
+      "name" : "required",
+      "type" : "boolean",
+      "bond" : "expression"
+    }
+  ],
+  "assets" : [ ],
+  "requiredModules" : [ ],
+  "webResources" : [ ],
+  "hasHelp" : false
+}

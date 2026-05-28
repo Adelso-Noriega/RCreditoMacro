@@ -1,0 +1,49 @@
+{
+  "id" : "customTableAsignaturasEstudiante",
+  "name" : "tableAsignaturasEstudiante",
+  "type" : "widget",
+  "custom" : true,
+  "modelVersion" : "2.6",
+  "lastUpdate" : 1779100004449,
+  "template" : "@customTableAsignaturasEstudiante.tpl.html",
+  "controller" : "@customTableAsignaturasEstudiante.ctrl.js",
+  "properties" : [
+    {
+      "label" : "Value",
+      "name" : "value",
+      "type" : "text",
+      "bond" : "variable"
+    },
+    {
+      "label" : "Lista de asignaturas",
+      "name" : "asignaturas",
+      "type" : "collection",
+      "defaultValue" : [ ],
+      "bond" : "expression"
+    },
+    {
+      "label" : "Lista de facultades",
+      "name" : "facultades",
+      "type" : "collection",
+      "defaultValue" : [ ],
+      "bond" : "expression"
+    },
+    {
+      "label" : "Lista de status",
+      "name" : "statusOptions",
+      "type" : "collection",
+      "defaultValue" : [ ],
+      "bond" : "expression"
+    },
+    {
+      "label" : "Label",
+      "name" : "label",
+      "type" : "text",
+      "bond" : "interpolation"
+    }
+  ],
+  "assets" : [ ],
+  "requiredModules" : [ ],
+  "webResources" : [ ],
+  "hasHelp" : false
+}
