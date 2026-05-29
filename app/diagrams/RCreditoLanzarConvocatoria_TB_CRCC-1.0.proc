@@ -84,7 +84,7 @@
           <iteratorExpression xmi:type="expression:Expression" xmi:id="_Kq-X1E-9EfGGR-WLMxJZPg" name="multiInstanceIterator" content="multiInstanceIterator" type="MULTIINSTANCE_ITERATOR_TYPE" returnType="java.lang.Object" returnTypeFixed="true"/>
           <completionCondition xmi:type="expression:Expression" xmi:id="_Kq-X1U-9EfGGR-WLMxJZPg" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
         </elements>
-        <elements xmi:type="process:IntermediateCatchTimerEvent" xmi:id="_Kq-X1k-9EfGGR-WLMxJZPg" name="Esperar fecha de apertura" outgoing="_Kq-X6k-9EfGGR-WLMxJZPg" incoming="_YnLz8E-9EfGGR-WLMxJZPg">
+        <elements xmi:type="process:IntermediateCatchTimerEvent" xmi:id="_Kq-X1k-9EfGGR-WLMxJZPg" name="Fecha de apertura alcanzada" outgoing="_Kq-X6k-9EfGGR-WLMxJZPg" incoming="_YnLz8E-9EfGGR-WLMxJZPg">
           <dynamicLabel xmi:type="expression:Expression" xmi:id="_Kq-X10-9EfGGR-WLMxJZPg" name="" content="" returnTypeFixed="true"/>
           <dynamicDescription xmi:type="expression:Expression" xmi:id="_Kq-X2E-9EfGGR-WLMxJZPg" name="" content="" returnTypeFixed="true"/>
           <stepSummary xmi:type="expression:Expression" xmi:id="_Kq-X2U-9EfGGR-WLMxJZPg" name="" content="" returnTypeFixed="true"/>
