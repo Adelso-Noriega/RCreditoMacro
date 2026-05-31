@@ -69,7 +69,7 @@
           <iteratorExpression xmi:type="expression:Expression" xmi:id="_xSa7Vx38EfG7rLUwHeWKLQ" name="multiInstanceIterator" content="multiInstanceIterator" type="MULTIINSTANCE_ITERATOR_TYPE" returnType="java.lang.Object" returnTypeFixed="true"/>
           <completionCondition xmi:type="expression:Expression" xmi:id="_xSa7Vh38EfG7rLUwHeWKLQ" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
         </elements>
-        <elements xmi:type="process:EndEvent" xmi:id="_nQlNgB39EfG7rLUwHeWKLQ" name="Reconocimiento de Crédito Solicitado" incoming="_uA0yQB39EfG7rLUwHeWKLQ">
+        <elements xmi:type="process:EndEvent" xmi:id="_nQlNgB39EfG7rLUwHeWKLQ" name="Reconocimiento de Créditos Solicitado" incoming="_uA0yQB39EfG7rLUwHeWKLQ">
           <dynamicLabel xmi:type="expression:Expression" xmi:id="_nQlNgh39EfG7rLUwHeWKLQ" name="" content="" returnTypeFixed="true"/>
           <dynamicDescription xmi:type="expression:Expression" xmi:id="_nQlNgR39EfG7rLUwHeWKLQ" name="" content="" returnTypeFixed="true"/>
           <stepSummary xmi:type="expression:Expression" xmi:id="_nQlNgx39EfG7rLUwHeWKLQ" name="" content="" returnTypeFixed="true"/>
