@@ -14,12 +14,12 @@
     </label>
   
   <!--<label required="true">Planes de Estudio</label><br/>-->
-  
   <button type="button"
-          class="btn btn-primary"
-          style="float: right;"
-          ng-click="addRow()">
-    Agregar Plan
+        class="btn btn-primary"
+        style="float: right;"
+        ng-if="!properties.readOnly"
+        ng-click="addRow()">
+  Agregar Plan
   </button>
 
   <table class="table table-bordered table-condensed">
@@ -27,7 +27,7 @@
       <tr>
         <th style="width: 80px;">Id</th>
         <th>Nombre del Plan</th>
-        <th>Facultad</th>
+        <!--<th>Facultad</th>-->
         <th style="width: 90px;"></th>
       </tr>
     </thead>
@@ -47,30 +47,30 @@
         <td>
           <select class="form-control"
                   ng-model="row.nombrePlan"
+                  ng-disabled="properties.readOnly"
                   ng-required="true">
             <option value="" hidden="true">Seleccione un plan</option>
-            <option value="C202">C202 - GRADO EN ARQUITECTURA (GRA)a</option>
-            <option value="C206">C206 - GRADO EN ARQUITECTURA TÉCNICA (GRA)</option>
-            <option value="C207">C207 - GRADO EN FUNDAMENTOS DE LA ARQUITECTURA (GRA)</option>
-            <option value="C214">C214 - GRADO EN INGENIERÍA AEROESPACIAL (GRA)</option>
+            <option value="PLAN1">PLAN1-MASTER EN INGENIERÍA INFORMÁTICA (MAS)</option>
           </select>
         </td>
 
         <!-- FACULTAD -->
-        <td>
+        <!--<td>
           <select class="form-control"
                   ng-model="row.facultad"
+                  ng-disabled="properties.readOnly"
                   ng-required="true">
             <option value="" hidden="true">Seleccione facultad</option>
             <option value="Ingeniería">Ingeniería</option>
             <option value="Ciencias">Ciencias</option>
           </select>
-        </td>
+        </td>-->
 
         <!-- ELIMINAR -->
-        <td class="text-center">
+        <td class="text-center" ng-if="!properties.readOnly">
           <button type="button"
                   class="btn btn-danger btn-sm"
+                  ng-if="!properties.readOnly"
                   ng-click="removeRow($index)">
             Eliminar
           </button>

@@ -4,7 +4,7 @@
   "type" : "form",
   "uuid" : "d71a16ca-2af0-4f0a-9e62-346070e2c435",
   "modelVersion" : "2.6",
-  "lastUpdate" : 1779572529861,
+  "lastUpdate" : 1781307488382,
   "description" : "Page generated with Bonita UI designer",
   "rows" : [
     [
@@ -427,6 +427,10 @@
                         "required" : {
                           "type" : "constant",
                           "value" : true
+                        },
+                        "readOnly" : {
+                          "type" : "constant",
+                          "value" : false
                         }
                       },
                       "reference" : "e7c4c983-f255-4f53-b0e3-a2dca86d944b",
@@ -463,6 +467,10 @@
                         "required" : {
                           "type" : "constant",
                           "value" : true
+                        },
+                        "readOnly" : {
+                          "type" : "constant",
+                          "value" : false
                         }
                       },
                       "reference" : "b2af491d-8435-4a1e-907b-35d536f45f6b",
@@ -527,7 +535,7 @@
                   },
                   "action" : {
                     "type" : "constant",
-                    "value" : "Submit task"
+                    "value" : "Start process"
                   },
                   "collectionToModify" : {
                     "type" : "variable"
@@ -642,6 +650,7 @@
         "    fechaInicio: $data.lanzarConvocatoria ? $data.lanzarConvocatoria.fechaInicio : null,",
         "    fechaFin: $data.lanzarConvocatoria ? $data.lanzarConvocatoria.fechaFin : null,",
         "    centro: $data.lanzarConvocatoria ? $data.lanzarConvocatoria.centro : \"\",",
+        "    statusComvocatoria: $data.lanzarConvocatoria ? $data.lanzarConvocatoria.statusConvocatoria : \"\",",
         "    planEstudio: $data.lanzarConvocatoria ? $data.lanzarConvocatoria.planEstudio : [],",
         "    integranteComision: $data.lanzarConvocatoria ? $data.lanzarConvocatoria.integranteComision : []",
         "  }",

@@ -18,6 +18,7 @@
   <button type="button"
           class="btn btn-primary"
           style="float: right;"
+          ng-if="!properties.readOnly"
           ng-click="addRow()">
     Agregar Asignatura
   </button>
@@ -26,8 +27,9 @@
     <thead>
       <tr>
         <th style="width: 80px;"></th>
+        <th>Nombre del plan</th>
         <th>Nombre de la asignatura</th>
-        <th>Facultad</th>
+        <!--<th>Facultad</th>-->
         <th style="width: 150px;">Status</th>
         <th style="width: 90px;"></th>
       </tr>
@@ -44,31 +46,44 @@
 
         <td>
           <select class="form-control"
-                  ng-model="row.nombreAsignatura"
+                  ng-model="row.nombrePlan"
+                  ng-disabled="properties.readOnly"
                   ng-required="true">
               <!-- ng-options="item.name as item.name for item in properties.asignaturas" -->
-            <option value="0" selected="true">Selecciones una asignatura</option>
-            <option value="1">C202-GRADO EN ARQUITECTURA (GRA)</option>
-            <option value="2">C206-GRADO EN ARQUITECTURA TÉCNICA (GRA)</option>
-            <option value="3">C207-GRADO EN FUNDAMENTOS DE LA ARQUITECTURA (GRA)</option>
-            <option value="4">C214-GRADO EN INGENIERÍA AEROESPACIAL (GRA)</option>
+            <option value="" hidden="true">Selecciones un plan</option>
+            <option value="PLAN1">PLAN1-MASTER EN INGENIERÍA INFORMÁTICA (MAS)</option>
+          </select>
+        </td>
+        
+        <td>
+          <select class="form-control"
+                  ng-model="row.nombreAsignatura"
+                  ng-disabled="properties.readOnly"
+                  ng-required="true">
+              <!-- ng-options="item.name as item.name for item in properties.asignaturas" -->
+            <option value="" hidden="true">Selecciones una asignatura</option>
+            <option value="ASIG1">ASIG1-DIRECCIÓN DE PROYECTOS DE LAS TECNOLOGÍAS DE LA INFORMACIÓN</option>
+            <option value="ASIG2">ASIG2-COMPUTACIÓN DE ALTAS PRESTACIONES</option>
+            <option value="ASIG3">ASIG3-AUTOMATIZACIÓN E INTEGRACIÓN DE TECNOLOGÍAS INFORMÁTICAS</option>
+            <option value="ASIG4">ASIG4-CRIPTOGRAFÍA Y CIBERSEGURIDAD</option>
           </select>
         </td>
 
-        <td>
+        <!-- <td>
           <select class="form-control"
                   ng-model="row.facultad"
+                  ng-disabled="properties.readOnly"
                   ng-required="true">
               <!-- ng-options="item.name as item.name for item in properties.facultades" -->
-            <option value="0" selected="true">Seleccione facultad</option>
+        <!--    <option value="" hidden="true">Seleccione facultad</option>
             <option value="1">Ingeniería</option>
             <option value="2">Ciencias</option>
           </select>
-        </td>
+        </td>-->
 
         <td>
           <select class="form-control"
-                  ng-model="row.status"
+                  ng-model="row.statusAsignatura"
                   ng-disabled="true">
               <!-- ng-options="item.value as item.label for item in properties.statusOptions" -->
             <option value="0" selected="true">Pendiente Revisión</option>
@@ -78,6 +93,7 @@
         <td class="text-center">
           <button type="button"
                   class="btn btn-danger btn-sm"
+                  ng-if="!properties.readOnly"
                   ng-click="removeRow($index)">
             Eliminar
           </button>

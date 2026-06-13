@@ -4,7 +4,7 @@
   "type" : "widget",
   "custom" : true,
   "modelVersion" : "2.6",
-  "lastUpdate" : 1779100004449,
+  "lastUpdate" : 1780617030760,
   "template" : "@customTableAsignaturasEstudiante.tpl.html",
   "controller" : "@customTableAsignaturasEstudiante.ctrl.js",
   "properties" : [
@@ -40,6 +40,13 @@
       "name" : "label",
       "type" : "text",
       "bond" : "interpolation"
+    },
+    {
+      "label" : "Read Only",
+      "name" : "readOnly",
+      "type" : "boolean",
+      "defaultValue" : false,
+      "bond" : "expression"
     }
   ],
   "assets" : [ ],

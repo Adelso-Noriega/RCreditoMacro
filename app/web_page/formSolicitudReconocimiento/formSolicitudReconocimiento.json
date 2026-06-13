@@ -4,7 +4,7 @@
   "type" : "form",
   "uuid" : "d553c827-29ad-41c2-9c25-5dc8e2cde36f",
   "modelVersion" : "2.6",
-  "lastUpdate" : 1779130250174,
+  "lastUpdate" : 1780437964996,
   "description" : "Page generated with Bonita UI designer",
   "rows" : [
     [
@@ -466,7 +466,7 @@
                         },
                         "value" : {
                           "type" : "variable",
-                          "value" : "formInput.solicitudReconocimientoInput.asignaturas"
+                          "value" : "formInput.solicitudReconocimientoInput.asignatura"
                         },
                         "color" : {
                           "type" : "constant",
@@ -493,6 +493,10 @@
                         "label" : {
                           "type" : "interpolation",
                           "value" : "Asignaturas"
+                        },
+                        "readOnly" : {
+                          "type" : "constant",
+                          "value" : false
                         }
                       },
                       "reference" : "48fcaaf2-6276-43fd-922f-b065813e313e",
@@ -526,7 +530,7 @@
                   },
                   "buttonStyle" : {
                     "type" : "constant",
-                    "value" : "primary"
+                    "value" : "success"
                   },
                   "label" : {
                     "type" : "interpolation",
@@ -534,7 +538,7 @@
                   },
                   "dataToSend" : {
                     "type" : "expression",
-                    "value" : "formOutput"
+                    "value" : "formInput"
                   },
                   "dataFromError" : {
                     "type" : "variable",
@@ -553,7 +557,7 @@
                   },
                   "targetUrlOnSuccess" : {
                     "type" : "interpolation",
-                    "value" : "/bonita"
+                    "value" : ""
                   },
                   "action" : {
                     "type" : "constant",
@@ -671,19 +675,30 @@
       "exposed" : false
     },
     "formInput" : {
-      "type" : "json",
+      "type" : "expression",
       "value" : [
-        "{\r",
-        "  \"solicitudReconocimientoInput\" : {\r",
-        "    \"tipoIdentificacion\" : \"\",\r",
-        "    \"identificacionEstudiante\" : \"\",\r",
-        "    \"nombreEstudiante\" : \"\",\r",
-        "    \"apellidoEstudiante\" : \"\",\r",
-        "    \"asignatura\" : {\r",
-        "      \"persistenceId_string\" : \"\"\r",
-        "    }\r",
-        "  }\r",
-        "}"
+        "return {",
+        "  solicitudReconocimientoInput: {",
+        "    numeroExpediente: $data.solicitudReconocimiento ? $data.solicitudReconocimiento.numeroExpediente : \"\",",
+        "    tipoIdentificacion: $data.solicitudReconocimiento ? $data.solicitudReconocimiento.tipoIdentificacion : \"\",",
+        "    identificacionEstudiante: $data.solicitudReconocimiento ? $data.solicitudReconocimiento.identificacionEstudiante : \"\",",
+        "    nombreEstudiante: $data.solicitudReconocimiento ? $data.solicitudReconocimiento.nombreEstudiante : \"\",",
+        "    apellidoEstudiante: $data.solicitudReconocimiento ? $data.solicitudReconocimiento.apellidoEstudiante : \"\",",
+        "    fechaCreacion: $data.solicitudReconocimiento ? $data.solicitudReconocimiento.fechaCreacion : null,",
+        "    statusSolicitud: $data.solicitudReconocimiento ? $data.solicitudReconocimiento.statusSolicitud : \"\",",
+        "    asignatura: $data.solicitudReconocimiento",
+        "      ? ($data.solicitudReconocimiento.asignatura || []).map(function(a) {",
+        "          return {",
+        "            id: a.id ? a.id : null,",
+        "            nombreAsignatura: a.nombreAsignatura ? a.nombreAsignatura : '',",
+        "            facultad: a.facultad ? a.facultad : '',",
+        "            statusAsignatura: a.statusAsignatura ? a.statusAsignatura : '',",
+        "            fechaStatus: a.fechaStatus ? a.fechaStatus : ''",
+        "          };",
+        "        })",
+        "      : []",
+        "  }",
+        "};"
       ],
       "exposed" : false
     },

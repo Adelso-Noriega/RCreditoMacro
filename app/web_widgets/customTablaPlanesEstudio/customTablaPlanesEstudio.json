@@ -4,7 +4,7 @@
   "type" : "widget",
   "custom" : true,
   "modelVersion" : "2.6",
-  "lastUpdate" : 1779270991705,
+  "lastUpdate" : 1780617057865,
   "template" : "@customTablaPlanesEstudio.tpl.html",
   "controller" : "@customTablaPlanesEstudio.ctrl.js",
   "properties" : [
@@ -25,6 +25,13 @@
       "label" : "Required",
       "name" : "required",
       "type" : "boolean",
+      "bond" : "expression"
+    },
+    {
+      "label" : "Read Only",
+      "name" : "readOnly",
+      "type" : "boolean",
+      "defaultValue" : false,
       "bond" : "expression"
     }
   ],

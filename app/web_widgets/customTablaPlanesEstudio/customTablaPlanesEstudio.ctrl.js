@@ -18,7 +18,9 @@ function ($scope) {
     $scope.properties.value.push({
       id: nextId,
       nombrePlan: "",
-      facultad: ""
+      facultad: ""//,
+      //statusAsignatura: "",
+      //fechaStatus: null
     });
   };
 

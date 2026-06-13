@@ -26,14 +26,20 @@ function ($scope) {
     ];
   }
 
+  function todayDateOnly() {
+    return new Date().toISOString().split("T")[0];
+  }
+
   $scope.addRow = function () {
     var nextId = $scope.properties.value.length + 1;
 
     $scope.properties.value.push({
       id: nextId,
+      nombrePlan: "0",
       nombreAsignatura: "0",
       facultad: "0",
-      status: "0"
+      statusAsignatura: "0",
+      fechaStatus: todayDateOnly()
     });
   };
 

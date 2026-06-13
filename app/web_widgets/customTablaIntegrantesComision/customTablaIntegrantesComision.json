@@ -4,7 +4,7 @@
   "type" : "widget",
   "custom" : true,
   "modelVersion" : "2.6",
-  "lastUpdate" : 1779271475820,
+  "lastUpdate" : 1780617380822,
   "template" : "@customTablaIntegrantesComision.tpl.html",
   "controller" : "@customTablaIntegrantesComision.ctrl.js",
   "properties" : [
@@ -25,6 +25,13 @@
       "label" : "Required",
       "name" : "required",
       "type" : "boolean",
+      "bond" : "expression"
+    },
+    {
+      "label" : "Read Only",
+      "name" : "readOnly",
+      "type" : "boolean",
+      "defaultValue" : false,
       "bond" : "expression"
     }
   ],

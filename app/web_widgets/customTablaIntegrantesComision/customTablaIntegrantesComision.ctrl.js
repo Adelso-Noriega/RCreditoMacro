@@ -17,7 +17,8 @@ function ($scope) {
 
     $scope.properties.value.push({
       id: nextId,
-      nombreIntegrante: ""
+      nombreIntegrante: "",
+      rol: ""
     });
   };
 
