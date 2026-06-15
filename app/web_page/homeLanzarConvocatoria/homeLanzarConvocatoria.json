@@ -201,7 +201,7 @@
                 },
                 "value" : {
                   "type" : "variable",
-                  "value" : "detalleConvocatoria.statusComvocatoria"
+                  "value" : "detalleConvocatoria.statusConvocatoria"
                 },
                 "debounce" : {
                   "type" : "constant",
@@ -700,6 +700,42 @@
       ],
       "exposed" : false
     },
+    "archivedCases" : {
+      "type" : "url",
+      "value" : [
+        "../API/bpm/archivedCase?p=0&c=1&f=sourceObjectId={{caseId}}"
+      ],
+      "exposed" : false
+    },
+    "archivedCaseContext" : {
+      "type" : "url",
+      "value" : [
+        "../API/bpm/archivedCase/{{archivedCaseId}}/context"
+      ],
+      "exposed" : false
+    },
+    "archivedCaseId" : {
+      "type" : "expression",
+      "value" : [
+        "return $data.archivedCases && $data.archivedCases.length > 0",
+        "  ? $data.archivedCases[0].id",
+        "  : null;"
+      ],
+      "exposed" : false
+    },
+    "storageId" : {
+      "type" : "expression",
+      "value" : [
+        "if ($data.caseContext && $data.caseContext.lanzarConvocatoria_ref) {",
+        "  return $data.caseContext.lanzarConvocatoria_ref.storageId;",
+        "}",
+        "if ($data.archivedCaseContext && $data.archivedCaseContext.lanzarConvocatoria_ref) {",
+        "  return $data.archivedCaseContext.lanzarConvocatoria_ref.storageId;",
+        "}",
+        "return null;"
+      ],
+      "exposed" : false
+    },
     "detalleConvocatoria" : {
       "type" : "url",
       "value" : [
@@ -711,15 +747,6 @@
       "type" : "url",
       "value" : [
         "../API/bdm/businessData/com.company.model.Convocatoria/{{storageId}}/planEstudio?p=0&c=20"
-      ],
-      "exposed" : false
-    },
-    "storageId" : {
-      "type" : "expression",
-      "value" : [
-        "return $data.caseContext && $data.caseContext.lanzarConvocatoria_ref",
-        "  ? $data.caseContext.lanzarConvocatoria_ref.storageId",
-        "  : null;"
       ],
       "exposed" : false
     },

@@ -4,7 +4,7 @@
         <businessObject qualifiedName="com.company.model.AsignaturasPlan">
             <fields>
                 <field type="LONG" length="255" name="id" nullable="true" collection="false"/>
-                <field type="STRING" length="255" name="nombreAsignatura" nullable="false" collection="false"/>
+                <field type="STRING" length="255" name="nombreAsignatura" nullable="true" collection="false"/>
                 <field type="LONG" length="255" name="idPlan" nullable="true" collection="false"/>
             </fields>
             <uniqueConstraints/>
@@ -13,10 +13,10 @@
         </businessObject>
         <businessObject qualifiedName="com.company.model.AsignaturasSolicitud">
             <fields>
-                <field type="LONG" length="255" name="id" nullable="true" collection="false"/>
+                <field type="LONG" length="255" name="myAttribute" nullable="true" collection="false"/>
                 <field type="STRING" length="255" name="nombrePlan" nullable="true" collection="false"/>
-                <field type="STRING" length="255" name="nombreAsignatura" nullable="false" collection="false"/>
-                <field type="STRING" length="255" name="facultad" nullable="false" collection="false"/>
+                <field type="STRING" length="255" name="nombreAsignatura" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="facultad" nullable="true" collection="false"/>
                 <field type="STRING" length="255" name="statusAsignatura" nullable="true" collection="false"/>
                 <field type="LOCALDATE" length="255" name="fechaStatus" nullable="true" collection="false"/>
             </fields>
@@ -27,13 +27,14 @@
         <businessObject qualifiedName="com.company.model.Convocatoria">
             <fields>
                 <field type="LONG" length="255" name="id" nullable="true" collection="false"/>
-                <field type="TEXT" length="255" name="descripcion" nullable="false" collection="false"/>
-                <field type="LOCALDATE" length="255" name="fechaInicio" nullable="false" collection="false"/>
-                <field type="LOCALDATE" length="255" name="fechaFin" nullable="false" collection="false"/>
-                <field type="STRING" length="255" name="centro" nullable="false" collection="false"/>
-                <relationField type="COMPOSITION" reference="com.company.model.PlanesEstudioConvocatoria" fetchType="LAZY" name="planEstudio" nullable="true" collection="true"/>
-                <relationField type="COMPOSITION" reference="com.company.model.IntegrantesComision" fetchType="LAZY" name="integranteComision" nullable="true" collection="true"/>
+                <field type="STRING" length="255" name="descripcion" nullable="true" collection="false"/>
+                <field type="LOCALDATE" length="255" name="fechaInicio" nullable="true" collection="false"/>
+                <field type="LOCALDATE" length="255" name="fechaFin" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="centro" nullable="true" collection="false"/>
                 <field type="STRING" length="255" name="statusConvocatoria" nullable="true" collection="false"/>
+                <relationField type="AGGREGATION" reference="com.company.model.PlanesEstudioConvocatoria" fetchType="LAZY" name="planEstudio" nullable="true" collection="true"/>
+                <field type="STRING" length="255" name="myAttribute1" nullable="true" collection="false"/>
+                <relationField type="AGGREGATION" reference="com.company.model.IntegrantesComision" fetchType="LAZY" name="integranteComision" nullable="true" collection="true"/>
             </fields>
             <uniqueConstraints/>
             <queries/>
@@ -42,7 +43,7 @@
         <businessObject qualifiedName="com.company.model.IntegrantesComision">
             <fields>
                 <field type="LONG" length="255" name="id" nullable="true" collection="false"/>
-                <field type="STRING" length="255" name="nombreIntegrante" nullable="false" collection="false"/>
+                <field type="STRING" length="255" name="nombreIntegrante" nullable="true" collection="false"/>
                 <field type="STRING" length="255" name="rol" nullable="true" collection="false"/>
             </fields>
             <uniqueConstraints/>
@@ -52,8 +53,8 @@
         <businessObject qualifiedName="com.company.model.PlanesEstudioConvocatoria">
             <fields>
                 <field type="LONG" length="255" name="id" nullable="true" collection="false"/>
-                <field type="STRING" length="255" name="nombrePlan" nullable="false" collection="false"/>
-                <field type="STRING" length="255" name="facultad" nullable="false" collection="false"/>
+                <field type="STRING" length="255" name="nombrePlan" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="facultad" nullable="true" collection="false"/>
             </fields>
             <uniqueConstraints/>
             <queries/>
@@ -62,14 +63,17 @@
         <businessObject qualifiedName="com.company.model.SolicitudReconocimiento">
             <fields>
                 <field type="LONG" length="255" name="id" nullable="true" collection="false"/>
-                <field type="STRING" length="255" name="numeroExpediente" nullable="false" collection="false"/>
-                <field type="STRING" length="255" name="tipoIdentificacion" nullable="false" collection="false"/>
-                <field type="STRING" length="255" name="identificacionEstudiante" nullable="false" collection="false"/>
-                <field type="STRING" length="255" name="nombreEstudiante" nullable="false" collection="false"/>
-                <field type="STRING" length="255" name="apellidoEstudiante" nullable="false" collection="false"/>
-                <relationField type="AGGREGATION" reference="com.company.model.AsignaturasSolicitud" fetchType="LAZY" name="asignatura" nullable="true" collection="true"/>
+                <field type="LONG" length="255" name="caseId" nullable="true" collection="false"/>
+                <field type="LONG" length="255" name="idConvocatoria" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="numeroExpediente" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="tipoIdentificacion" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="identificacionEstudiante" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="nombreEstudiante" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="apellidoEstudiante" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="email" nullable="true" collection="false"/>
                 <field type="LOCALDATE" length="255" name="fechaCreacion" nullable="true" collection="false"/>
                 <field type="STRING" length="255" name="statusSolicitud" nullable="true" collection="false"/>
+                <relationField type="AGGREGATION" reference="com.company.model.AsignaturasSolicitud" fetchType="LAZY" name="asignatura" nullable="true" collection="true"/>
             </fields>
             <uniqueConstraints/>
             <queries/>

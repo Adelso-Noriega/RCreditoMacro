@@ -2,7 +2,7 @@
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:decision="http://www.bonitasoft.org/ns/bpm/process/decision" xmlns:expression="http://www.bonitasoft.org/ns/bpm/expression" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.3/notation" xmlns:process="http://www.bonitasoft.org/ns/bpm/process">
   <process:MainProcess xmi:id="_Kq9wsE-9EfGGR-WLMxJZPg" name="RCreditoLanzarConvocatoria_TB_CRCC" bonitaModelVersion="9">
     <elements xmi:type="process:Pool" xmi:id="_Kq9wsU-9EfGGR-WLMxJZPg" name="Lanzar Convocatoria TB" displayName="Lanzar Convocatoria TB">
-      <elements xmi:type="process:Lane" xmi:id="_Kq9wsk-9EfGGR-WLMxJZPg" name="Comisión de Reconocimiento de Créditos" actor="_KcRMAFHvEfGLU8K6Mq5TUA">
+      <elements xmi:type="process:Lane" xmi:id="_Kq9wsk-9EfGGR-WLMxJZPg" name="Comisión de Reconocimiento de Créditos" actor="_QvkXgGdjEfGmGuWX0X0qYQ">
         <elements xmi:type="process:StartEvent" xmi:id="_Kq9ws0-9EfGGR-WLMxJZPg" name="Inicio Lanzar Convocatoria" outgoing="_Kq-X7U-9EfGGR-WLMxJZPg">
           <dynamicLabel xmi:type="expression:Expression" xmi:id="_Kq9wtE-9EfGGR-WLMxJZPg" name="" content="" returnTypeFixed="true"/>
           <dynamicDescription xmi:type="expression:Expression" xmi:id="_Kq9wtU-9EfGGR-WLMxJZPg" name="" content="" returnTypeFixed="true"/>
@@ -54,7 +54,7 @@
         <decisionTable xmi:type="decision:DecisionTable" xmi:id="_Ful_8GBpEfGyK8FcaLm-Pw"/>
         <condition xmi:type="expression:Expression" xmi:id="_FumnAGBpEfGyK8FcaLm-Pw" name="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
       </connections>
-      <actors xmi:type="process:Actor" xmi:id="_KcRMAFHvEfGLU8K6Mq5TUA" name="Comisión RCC" initiator="true"/>
+      <actors xmi:type="process:Actor" xmi:id="_QvkXgGdjEfGmGuWX0X0qYQ" name="secretariaEPS" initiator="true"/>
       <contract xmi:type="process:Contract" xmi:id="_Kq-X9E-9EfGGR-WLMxJZPg">
         <inputs xmi:type="process:ContractInput" xmi:id="_-Ig50FtOEfGutYVliUCgjg" name="lanzarConvocatoriaInput" type="COMPLEX" dataReference="lanzarConvocatoria">
           <inputs xmi:type="process:ContractInput" xmi:id="_-Ig50VtOEfGutYVliUCgjg" name="descripcion"/>
@@ -71,7 +71,7 @@
               <mapping xmi:type="process:ContractInputMapping" xmi:id="_DV28EWBrEfGDgKAgeBT2bQ"/>
             </inputs>
           </inputs>
-          <inputs xmi:type="process:ContractInput" xmi:id="_Bny-MF0-EfGkxNmzPdDORw" name="statusComvocatoria">
+          <inputs xmi:type="process:ContractInput" xmi:id="_Bny-MF0-EfGkxNmzPdDORw" name="statusConvocatoria">
             <mapping xmi:type="process:ContractInputMapping" xmi:id="_Bny-MV0-EfGkxNmzPdDORw"/>
           </inputs>
         </inputs>

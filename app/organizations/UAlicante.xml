@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="ASCII"?>
+<organization:Organization xmlns:organization="http://documentation.bonitasoft.com/organization-xml-schema/1.1">
+  <customUserInfoDefinitions/>
+  <users>
+    <user userName="Estudiante">
+      <firstName>Adelso</firstName>
+      <lastName></lastName>
+      <manager></manager>
+      <personalData/>
+      <professionalData/>
+      <password encrypted="false">bpm</password>
+      <customUserInfoValues/>
+    </user>
+    <user userName="SecretariaEPS">
+      <firstName>Lucia</firstName>
+      <personalData/>
+      <professionalData/>
+      <password encrypted="false">bpm</password>
+      <customUserInfoValues/>
+    </user>
+    <user userName="ComisionRCC">
+      <firstName>Secretario Comis&#xed;on</firstName>
+      <personalData/>
+      <professionalData/>
+      <password encrypted="false">bpm</password>
+      <customUserInfoValues/>
+    </user>
+  </users>
+  <roles>
+    <role name="secretariaEPS">
+      <displayName>Secretar&#xed;a EPS</displayName>
+    </role>
+    <role name="comisionRCC">
+      <displayName>Comisi&#xf3;n RCC</displayName>
+    </role>
+    <role name="estudiante">
+      <displayName>Estudiante</displayName>
+    </role>
+  </roles>
+  <groups>
+    <group name="UAlicante">
+      <displayName>Universidad de Alicante</displayName>
+    </group>
+    <group name="EPS" parentPath="/UAlicante">
+      <displayName>Escuela Polit&#xe9;cnica Superior</displayName>
+    </group>
+  </groups>
+  <memberships>
+    <membership>
+      <userName>Estudiante</userName>
+      <roleName>estudiante</roleName>
+      <groupName>UAlicante</groupName>
+    </membership>
+    <membership>
+      <userName>SecretariaEPS</userName>
+      <roleName>secretariaEPS</roleName>
+      <groupName>UAlicante</groupName>
+    </membership>
+    <membership>
+      <userName>ComisionRCC</userName>
+      <roleName>comisionRCC</roleName>
+      <groupName>UAlicante</groupName>
+    </membership>
+  </memberships>
+</organization:Organization>

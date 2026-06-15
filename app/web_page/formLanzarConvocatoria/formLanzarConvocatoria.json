@@ -650,7 +650,7 @@
         "    fechaInicio: $data.lanzarConvocatoria ? $data.lanzarConvocatoria.fechaInicio : null,",
         "    fechaFin: $data.lanzarConvocatoria ? $data.lanzarConvocatoria.fechaFin : null,",
         "    centro: $data.lanzarConvocatoria ? $data.lanzarConvocatoria.centro : \"\",",
-        "    statusComvocatoria: $data.lanzarConvocatoria ? $data.lanzarConvocatoria.statusConvocatoria : \"\",",
+        "    statusConvocatoria: $data.lanzarConvocatoria ? $data.lanzarConvocatoria.statusConvocatoria : \"\",",
         "    planEstudio: $data.lanzarConvocatoria ? $data.lanzarConvocatoria.planEstudio : [],",
         "    integranteComision: $data.lanzarConvocatoria ? $data.lanzarConvocatoria.integranteComision : []",
         "  }",

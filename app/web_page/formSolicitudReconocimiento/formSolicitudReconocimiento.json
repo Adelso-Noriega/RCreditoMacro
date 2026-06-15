@@ -4,7 +4,7 @@
   "type" : "form",
   "uuid" : "d553c827-29ad-41c2-9c25-5dc8e2cde36f",
   "modelVersion" : "2.6",
-  "lastUpdate" : 1780437964996,
+  "lastUpdate" : 1781519096809,
   "description" : "Page generated with Bonita UI designer",
   "rows" : [
     [
@@ -51,7 +51,7 @@
                   },
                   "text" : {
                     "type" : "interpolation",
-                    "value" : "Solicitud De Reconocimiento De Créditos"
+                    "value" : "Solicitud De Reconocimiento De Créditos - Status Convocatoria: {{convocatoriaActiva[0].statusConvocatoria}}"
                   },
                   "alignment" : {
                     "type" : "constant",
@@ -464,6 +464,92 @@
                           "type" : "constant",
                           "value" : false
                         },
+                        "required" : {
+                          "type" : "constant",
+                          "value" : false
+                        },
+                        "allowHTML" : {
+                          "type" : "constant",
+                          "value" : false
+                        },
+                        "minLength" : {
+                          "type" : "constant",
+                          "value" : ""
+                        },
+                        "maxLength" : {
+                          "type" : "constant",
+                          "value" : ""
+                        },
+                        "readOnly" : {
+                          "type" : "constant",
+                          "value" : false
+                        },
+                        "labelHidden" : {
+                          "type" : "constant",
+                          "value" : false
+                        },
+                        "label" : {
+                          "type" : "interpolation",
+                          "value" : "Email"
+                        },
+                        "labelPosition" : {
+                          "type" : "constant",
+                          "value" : "top"
+                        },
+                        "labelWidth" : {
+                          "type" : "constant",
+                          "value" : 4
+                        },
+                        "placeholder" : {
+                          "type" : "interpolation"
+                        },
+                        "value" : {
+                          "type" : "variable",
+                          "value" : "formInput.solicitudReconocimientoInput.email"
+                        },
+                        "debounce" : {
+                          "type" : "constant",
+                          "value" : 0
+                        },
+                        "type" : {
+                          "type" : "constant",
+                          "value" : "text"
+                        },
+                        "min" : {
+                          "type" : "constant"
+                        },
+                        "max" : {
+                          "type" : "constant"
+                        },
+                        "step" : {
+                          "type" : "constant",
+                          "value" : 1
+                        }
+                      },
+                      "reference" : "bde07697-a753-4b3b-a7f4-07ac87143162",
+                      "hasValidationError" : false,
+                      "id" : "pbInput"
+                    }
+                  ],
+                  [ ],
+                  [
+                    {
+                      "type" : "component",
+                      "dimension" : {
+                        "xs" : 12,
+                        "sm" : 12,
+                        "md" : 12,
+                        "lg" : 12
+                      },
+                      "propertyValues" : {
+                        "cssClasses" : {
+                          "type" : "constant",
+                          "value" : ""
+                        },
+                        "hidden" : {
+                          "type" : "constant",
+                          "value" : false
+                        },
                         "value" : {
                           "type" : "variable",
                           "value" : "formInput.solicitudReconocimientoInput.asignatura"
@@ -503,6 +589,68 @@
                       "hasValidationError" : false,
                       "id" : "customTableAsignaturasEstudiante"
                     }
+                  ],
+                  [
+                    {
+                      "type" : "component",
+                      "dimension" : {
+                        "xs" : 12,
+                        "sm" : 12,
+                        "md" : 12,
+                        "lg" : 12
+                      },
+                      "propertyValues" : {
+                        "cssClasses" : {
+                          "type" : "constant",
+                          "value" : ""
+                        },
+                        "hidden" : {
+                          "type" : "constant",
+                          "value" : false
+                        },
+                        "required" : {
+                          "type" : "constant",
+                          "value" : true
+                        },
+                        "allowHTML" : {
+                          "type" : "constant",
+                          "value" : false
+                        },
+                        "labelHidden" : {
+                          "type" : "constant",
+                          "value" : false
+                        },
+                        "label" : {
+                          "type" : "interpolation",
+                          "value" : "Adjuntar certificado de calificaciones"
+                        },
+                        "labelPosition" : {
+                          "type" : "constant",
+                          "value" : "top"
+                        },
+                        "labelWidth" : {
+                          "type" : "constant",
+                          "value" : 4
+                        },
+                        "placeholder" : {
+                          "type" : "interpolation"
+                        },
+                        "url" : {
+                          "type" : "constant",
+                          "value" : "../API/formFileUpload"
+                        },
+                        "value" : {
+                          "type" : "variable",
+                          "value" : "certificadoCalificaciones"
+                        },
+                        "errorContent" : {
+                          "type" : "variable"
+                        }
+                      },
+                      "reference" : "263244e1-6c21-413c-8595-be213d51ab95",
+                      "hasValidationError" : false,
+                      "id" : "pbUpload"
+                    }
                   ]
                 ]
               }
@@ -537,8 +685,8 @@
                     "value" : "Guardar"
                   },
                   "dataToSend" : {
-                    "type" : "expression",
-                    "value" : "formInput"
+                    "type" : "variable",
+                    "value" : "formOutput"
                   },
                   "dataFromError" : {
                     "type" : "variable",
@@ -684,6 +832,7 @@
         "    identificacionEstudiante: $data.solicitudReconocimiento ? $data.solicitudReconocimiento.identificacionEstudiante : \"\",",
         "    nombreEstudiante: $data.solicitudReconocimiento ? $data.solicitudReconocimiento.nombreEstudiante : \"\",",
         "    apellidoEstudiante: $data.solicitudReconocimiento ? $data.solicitudReconocimiento.apellidoEstudiante : \"\",",
+        "    email: $data.solicitudReconocimiento ? $data.solicitudReconocimiento.email : \"\",",
         "    fechaCreacion: $data.solicitudReconocimiento ? $data.solicitudReconocimiento.fechaCreacion : null,",
         "    statusSolicitud: $data.solicitudReconocimiento ? $data.solicitudReconocimiento.statusSolicitud : \"\",",
         "    asignatura: $data.solicitudReconocimiento",
@@ -720,9 +869,12 @@
     "formOutput" : {
       "type" : "expression",
       "value" : [
+        "var solicitudInput = Object.assign({}, $data.formInput.solicitudReconocimientoInput);",
+        "solicitudInput.idConvocatoria = ($data.convocatoriaActiva && $data.convocatoriaActiva[0]) ? $data.convocatoriaActiva[0].persistenceId : null;",
         "return {",
-        "\tsolicitudReconocimientoInput: $data.formInput.solicitudReconocimientoInput",
-        "}"
+        "  solicitudReconocimientoInput: solicitudInput,",
+        "  certificadoCalificaciones: ($data.certificadoCalificaciones && $data.certificadoCalificaciones.tempPath) ? [$data.certificadoCalificaciones] : []",
+        "};"
       ],
       "exposed" : false
     },
@@ -748,6 +900,20 @@
       "type" : "expression",
       "value" : [
         "[\"Ingeniería\", \"Ciencias\"]"
+      ],
+      "exposed" : false
+    },
+    "convocatoriaActiva" : {
+      "type" : "url",
+      "value" : [
+        "../API/bdm/businessData/com.company.model.Convocatoria?q=findByStatusConvocatoria&p=0&c=1&f=statusConvocatoria=Abierta"
+      ],
+      "exposed" : false
+    },
+    "certificadoCalificaciones" : {
+      "type" : "expression",
+      "value" : [
+        "return null;"
       ],
       "exposed" : false
     }

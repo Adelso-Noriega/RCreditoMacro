@@ -547,7 +547,7 @@
       <enabled>true</enabled>
       <password encrypted="false">bpm</password>
     </user>
-    <user userName="Comision">
+    <user userName="User2">
       <firstName>Comisi&#xf3;n</firstName>
       <lastName>RCC</lastName>
       <manager>helen.kelly</manager>
@@ -556,7 +556,7 @@
       <password encrypted="false">bpm</password>
       <customUserInfoValues/>
     </user>
-    <user userName="Estudiante">
+    <user userName="User1">
       <firstName>Estudiante</firstName>
       <lastName></lastName>
       <personalData/>
@@ -757,16 +757,6 @@
       <roleName>Employee</roleName>
       <groupName>north_america</groupName>
       <groupParentPath>/acme/sales</groupParentPath>
-    </membership>
-    <membership>
-      <userName>Comision</userName>
-      <roleName>ComisionRCC</roleName>
-      <groupName>UA</groupName>
-    </membership>
-    <membership>
-      <userName>Estudiante</userName>
-      <roleName>Estudiante</roleName>
-      <groupName>UA</groupName>
     </membership>
   </memberships>
 </organization:Organization>
