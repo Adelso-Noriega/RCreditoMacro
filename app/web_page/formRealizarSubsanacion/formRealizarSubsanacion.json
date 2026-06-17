@@ -4,7 +4,7 @@
   "type" : "form",
   "uuid" : "9c3e5a12-7b4d-4f8e-a1c2-3d5e7f9a0b1c",
   "modelVersion" : "2.6",
-  "lastUpdate" : 1781691857501,
+  "lastUpdate" : 1781706997153,
   "description" : "Page generated with Bonita UI designer",
   "rows" : [
     [
@@ -641,7 +641,7 @@
                   },
                   "value" : {
                     "type" : "variable",
-                    "value" : "comentariosSubsanacion"
+                    "value" : "solicitudData[0].comentariosSubsanacion"
                   },
                   "rows" : {
                     "type" : "constant",
@@ -868,7 +868,7 @@
                   },
                   "required" : {
                     "type" : "constant",
-                    "value" : true
+                    "value" : false
                   },
                   "allowHTML" : {
                     "type" : "constant",
@@ -880,7 +880,7 @@
                   },
                   "label" : {
                     "type" : "interpolation",
-                    "value" : "Adjuntar nuevo documento"
+                    "value" : "Adjuntar nuevo documento (opcional, se añade a los existentes)"
                   },
                   "labelPosition" : {
                     "type" : "constant",
@@ -1158,11 +1158,12 @@
     "formOutput" : {
       "type" : "expression",
       "value" : [
-        "var documentosConservados = ($data.certificadoCalificaciones || []).filter(function(d){ return !d._eliminar; }).map(function(d){ return { id: d.contentStorageId, fileName: d.fileName }; });",
+        "var idsEliminar = ($data.certificadoCalificaciones || []).filter(function(d){ return d._eliminar; }).map(function(d){ return String(d.contentStorageId); });",
         "var nuevos = ($data.nuevoDocumento && $data.nuevoDocumento.tempPath) ? [$data.nuevoDocumento] : [];",
         "return {",
         "  comentariosSubsanacion: $data.comentariosSubsanacion,",
-        "  certificadoCalificacionesSubsanacion: documentosConservados.concat(nuevos)",
+        "  certificadoCalificacionesSubsanacion: nuevos,",
+        "  documentosEliminarIds: idsEliminar",
         "};"
       ],
       "exposed" : false

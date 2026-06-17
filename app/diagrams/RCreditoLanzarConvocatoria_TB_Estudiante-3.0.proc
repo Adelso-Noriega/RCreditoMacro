@@ -17,15 +17,26 @@
               <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_SUBS001BDComentarios" name="solicitudReconocimiento" dataType="_VhekaVIFEfGLU8K6Mq5TUA" className="com.company.model.SolicitudReconocimiento"/>
             </leftOperand>
             <rightOperand xmi:type="expression:Expression" xmi:id="_SUBS001ROComentarios" name="setComentariosSubsanacion()" content="solicitudReconocimiento.comentariosSubsanacion = comentariosSubsanacion&#xD;&#xA;return solicitudReconocimiento" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="com.company.model.SolicitudReconocimiento">
-              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_SUBS001BD2Comentarios" name="solicitudReconocimiento" dataType="_VhekaVIFEfGLU8K6Mq5TUA" className="com.company.model.SolicitudReconocimiento"/>
-              <referencedElements xmi:type="process:ContractInput" xmi:id="_SUBS001CIComentarios" name="comentariosSubsanacion"/>
+              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_Z1B_kGp2EfGqCp5S24djrw" name="solicitudReconocimiento" dataType="_VhekaVIFEfGLU8K6Mq5TUA" className="com.company.model.SolicitudReconocimiento"/>
+              <referencedElements xmi:type="process:ContractInput" xmi:id="_Z1B_kWp2EfGqCp5S24djrw" name="comentariosSubsanacion" description="Comentarios de subsanación enviados por el estudiante"/>
             </rightOperand>
             <operator xmi:type="expression:Operator" xmi:id="_SUBS001OOPComentarios" type="ASSIGNMENT"/>
           </operations>
-          <operations xmi:type="expression:Operation" xmi:id="_SUBS001OpDocs">
-            <leftOperand xmi:type="expression:Expression" xmi:id="_SUBS001LODocs" name="certificadoCalificaciones" content="certificadoCalificaciones" type="TYPE_DOCUMENT" returnType="java.util.List"/>
-            <rightOperand xmi:type="expression:Expression" xmi:id="_SUBS001RODocs" name="certificadoCalificacionesSubsanacion" content="certificadoCalificacionesSubsanacion" returnType="java.util.List"/>
-            <operator xmi:type="expression:Operator" xmi:id="_SUBS001OOPDocs" type="ASSIGNMENT"/>
+          <operations xmi:type="expression:Operation" xmi:id="_tdxgwGp2EfGqCp5S24djrw">
+            <leftOperand xmi:type="expression:Expression" xmi:id="_tdyH0Gp2EfGqCp5S24djrw" name="certificadoCalificaciones" content="certificadoCalificaciones" type="DOCUMENT_REF_TYPE" returnType="java.util.List">
+              <referencedElements xmi:type="process:Document" xmi:id="_uZWYMGp2EfGqCp5S24djrw" name="certificadoCalificaciones" multiple="true"/>
+            </leftOperand>
+            <rightOperand xmi:type="expression:Expression" xmi:id="_tdyH0Wp2EfGqCp5S24djrw" name="mergeDocumentosSubsanacion()" content="import org.bonitasoft.engine.bpm.document.DocumentValue&#xD;&#xA;def idsEliminar = (documentosEliminarIds ?: []).collect { it.toString() }&#xD;&#xA;def existentes = apiAccessor.getProcessAPI().getDocumentList(processInstanceId, &quot;certificadoCalificaciones&quot;, 0, 100)&#xD;&#xA;def conservados = existentes.findAll { doc -> !idsEliminar.contains(doc.getContentStorageId()) }.collect { doc ->&#xD;&#xA;&#x9;def contenido = apiAccessor.getProcessAPI().getDocumentContent(doc.getContentStorageId())&#xD;&#xA;&#x9;new DocumentValue(contenido, doc.getContentMimeType(), doc.getFileName())&#xD;&#xA;}&#xD;&#xA;def nuevos = (certificadoCalificacionesSubsanacion ?: []).collect { f ->&#xD;&#xA;&#x9;new DocumentValue(f.getContent(), f.getContentType(), f.getFileName())&#xD;&#xA;}&#xD;&#xA;return conservados + nuevos" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.util.List">
+              <referencedElements xmi:type="expression:Expression" xmi:id="_HpC60Gp3EfGqCp5S24djrw" name="processInstanceId" content="processInstanceId" type="TYPE_ENGINE_CONSTANT" returnType="java.lang.Long"/>
+              <referencedElements xmi:type="expression:Expression" xmi:id="_HpC60Wp3EfGqCp5S24djrw" name="apiAccessor" content="apiAccessor" type="TYPE_ENGINE_CONSTANT" returnType="org.bonitasoft.engine.api.APIAccessor"/>
+              <referencedElements xmi:type="process:ContractInput" xmi:id="_HpC60mp3EfGqCp5S24djrw" name="certificadoCalificacionesSubsanacion" type="FILE" description="Documento(s) nuevo(s) de certificado de calificaciones adjuntado(s) en la subsanación" multiple="true">
+                <mapping xmi:type="process:ContractInputMapping" xmi:id="_HpC602p3EfGqCp5S24djrw"/>
+              </referencedElements>
+              <referencedElements xmi:type="process:ContractInput" xmi:id="_HpDh4Gp3EfGqCp5S24djrw" name="documentosEliminarIds" description="IDs (contentStorageId) de documentos existentes marcados para eliminar" multiple="true">
+                <mapping xmi:type="process:ContractInputMapping" xmi:id="_HpDh4Wp3EfGqCp5S24djrw"/>
+              </referencedElements>
+            </rightOperand>
+            <operator xmi:type="expression:Operator" xmi:id="_tdyH0mp2EfGqCp5S24djrw" type="DOCUMENT_LIST_SET"/>
           </operations>
           <loopCondition xmi:type="expression:Expression" xmi:id="_zfswxGnjEfGdGrTXlh5aCw" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
           <loopMaximum xmi:type="expression:Expression" xmi:id="_zfswxWnjEfGdGrTXlh5aCw" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
@@ -37,8 +48,11 @@
           </formMapping>
           <contract xmi:type="process:Contract" xmi:id="_zftX0GnjEfGdGrTXlh5aCw">
             <inputs xmi:type="process:ContractInput" xmi:id="_SUBS001CIComentariosInput" name="comentariosSubsanacion" description="Comentarios de subsanación enviados por el estudiante"/>
-            <inputs xmi:type="process:ContractInput" xmi:id="_SUBS001CIDocsInput" name="certificadoCalificacionesSubsanacion" type="FILE" description="Documentos de certificado de calificaciones actualizados en la subsanación" multiple="true">
+            <inputs xmi:type="process:ContractInput" xmi:id="_SUBS001CIDocsInput" name="certificadoCalificacionesSubsanacion" type="FILE" description="Documento(s) nuevo(s) de certificado de calificaciones adjuntado(s) en la subsanación" multiple="true">
               <mapping xmi:type="process:ContractInputMapping" xmi:id="_SUBS001CIDocsMapping"/>
+            </inputs>
+            <inputs xmi:type="process:ContractInput" xmi:id="_SUBS001CIDocsDelInput" name="documentosEliminarIds" description="IDs (contentStorageId) de documentos existentes marcados para eliminar" multiple="true">
+              <mapping xmi:type="process:ContractInputMapping" xmi:id="_SUBS001CIDocsDelMapping"/>
             </inputs>
           </contract>
           <expectedDuration xmi:type="expression:Expression" xmi:id="_zftX02njEfGdGrTXlh5aCw" name="" content="" returnType="java.lang.Long" returnTypeFixed="true"/>
@@ -127,8 +141,8 @@
               <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_CaseIdBD1" name="solicitudReconocimiento" dataType="_VhekaVIFEfGLU8K6Mq5TUA" className="com.company.model.SolicitudReconocimiento"/>
             </leftOperand>
             <rightOperand xmi:type="expression:Expression" xmi:id="_CaseIdRO1" name="setCaseId()" content="solicitudReconocimiento.caseId = processInstanceId&#xD;&#xA;return solicitudReconocimiento" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="com.company.model.SolicitudReconocimiento">
-              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_CaseIdBD2" name="solicitudReconocimiento" dataType="_VhekaVIFEfGLU8K6Mq5TUA" className="com.company.model.SolicitudReconocimiento"/>
-              <referencedElements xmi:type="expression:Expression" xmi:id="_CaseIdEC1" name="processInstanceId" content="processInstanceId" type="TYPE_ENGINE_CONSTANT" returnType="java.lang.Long"/>
+              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_QCPP0Gp2EfGqCp5S24djrw" name="solicitudReconocimiento" dataType="_VhekaVIFEfGLU8K6Mq5TUA" className="com.company.model.SolicitudReconocimiento"/>
+              <referencedElements xmi:type="expression:Expression" xmi:id="_QCPP0Wp2EfGqCp5S24djrw" name="processInstanceId" content="processInstanceId" type="TYPE_ENGINE_CONSTANT" returnType="java.lang.Long"/>
             </rightOperand>
             <operator xmi:type="expression:Operator" xmi:id="_CaseIdOOP1" type="ASSIGNMENT"/>
           </operations>
@@ -149,8 +163,8 @@
               <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_UIW2VYiLUEcUTBhpi9FToQ" name="solicitudReconocimiento" dataType="_VhekaVIFEfGLU8K6Mq5TUA" className="com.company.model.SolicitudReconocimiento"/>
             </leftOperand>
             <rightOperand xmi:type="expression:Expression" xmi:id="_r1ZoJB45XsuhrAlroZ24zL" name="setStatusSolicitud()" content="solicitudReconocimiento.statusSolicitud = statusSolicitud&#xD;&#xA;return solicitudReconocimiento" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="com.company.model.SolicitudReconocimiento">
-              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_dfEeGnFlTwXMqdBOdMmKMd" name="solicitudReconocimiento" dataType="_VhekaVIFEfGLU8K6Mq5TUA" className="com.company.model.SolicitudReconocimiento"/>
-              <referencedElements xmi:type="process:ContractInput" xmi:id="_dbWHI2dpr7lPbWdY9Xu0rV" name="statusSolicitud"/>
+              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_RxYSMGp2EfGqCp5S24djrw" name="solicitudReconocimiento" dataType="_VhekaVIFEfGLU8K6Mq5TUA" className="com.company.model.SolicitudReconocimiento"/>
+              <referencedElements xmi:type="process:ContractInput" xmi:id="_RxYSMWp2EfGqCp5S24djrw" name="statusSolicitud" description="Nuevo estado de la solicitud (asignado por Agente IA)"/>
             </rightOperand>
             <operator xmi:type="expression:Operator" xmi:id="_VSopAAAAAAAAAAAAAAAAAA" type="ASSIGNMENT"/>
           </operations>
@@ -159,8 +173,8 @@
               <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_VS001BDComentarios" name="solicitudReconocimiento" dataType="_VhekaVIFEfGLU8K6Mq5TUA" className="com.company.model.SolicitudReconocimiento"/>
             </leftOperand>
             <rightOperand xmi:type="expression:Expression" xmi:id="_VS001ROComentarios" name="setComentariosSubsanacion()" content="solicitudReconocimiento.comentariosSubsanacion = comentariosSubsanacion&#xD;&#xA;return solicitudReconocimiento" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="com.company.model.SolicitudReconocimiento">
-              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_VS001BD2Comentarios" name="solicitudReconocimiento" dataType="_VhekaVIFEfGLU8K6Mq5TUA" className="com.company.model.SolicitudReconocimiento"/>
-              <referencedElements xmi:type="process:ContractInput" xmi:id="_VS001CIComentarios" name="comentariosSubsanacion"/>
+              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_RY0oQGp2EfGqCp5S24djrw" name="solicitudReconocimiento" dataType="_VhekaVIFEfGLU8K6Mq5TUA" className="com.company.model.SolicitudReconocimiento"/>
+              <referencedElements xmi:type="process:ContractInput" xmi:id="_RY0oQWp2EfGqCp5S24djrw" name="comentariosSubsanacion" description="Comentarios de subsanación para el estudiante (solo si el estado es Requiere Subsanación)"/>
             </rightOperand>
             <operator xmi:type="expression:Operator" xmi:id="_VS001OOPComentarios" type="ASSIGNMENT"/>
           </operations>
@@ -282,8 +296,8 @@
               <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_RE001BDStatus" name="solicitudReconocimiento" dataType="_VhekaVIFEfGLU8K6Mq5TUA" className="com.company.model.SolicitudReconocimiento"/>
             </leftOperand>
             <rightOperand xmi:type="expression:Expression" xmi:id="_RE001ROStatus" name="setStatusSolicitud()" content="solicitudReconocimiento.statusSolicitud = statusSolicitud&#xD;&#xA;return solicitudReconocimiento" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="com.company.model.SolicitudReconocimiento">
-              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_RE001BD2Status" name="solicitudReconocimiento" dataType="_VhekaVIFEfGLU8K6Mq5TUA" className="com.company.model.SolicitudReconocimiento"/>
-              <referencedElements xmi:type="process:ContractInput" xmi:id="_RE001CIStatus" name="statusSolicitud"/>
+              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_UF_ZIGp2EfGqCp5S24djrw" name="solicitudReconocimiento" dataType="_VhekaVIFEfGLU8K6Mq5TUA" className="com.company.model.SolicitudReconocimiento"/>
+              <referencedElements xmi:type="process:ContractInput" xmi:id="_UF_ZIWp2EfGqCp5S24djrw" name="statusSolicitud" description="Nuevo estado de la solicitud (asignado por el Coordinador de Titulación)"/>
             </rightOperand>
             <operator xmi:type="expression:Operator" xmi:id="_RE001OOPStatus" type="ASSIGNMENT"/>
           </operations>
@@ -292,8 +306,8 @@
               <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_RE002BDResultado" name="solicitudReconocimiento" dataType="_VhekaVIFEfGLU8K6Mq5TUA" className="com.company.model.SolicitudReconocimiento"/>
             </leftOperand>
             <rightOperand xmi:type="expression:Expression" xmi:id="_RE002ROResultado" name="setResultadoEstudio()" content="solicitudReconocimiento.resultadoEstudio = resultadoEstudio&#xD;&#xA;return solicitudReconocimiento" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="com.company.model.SolicitudReconocimiento">
-              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_RE002BD2Resultado" name="solicitudReconocimiento" dataType="_VhekaVIFEfGLU8K6Mq5TUA" className="com.company.model.SolicitudReconocimiento"/>
-              <referencedElements xmi:type="process:ContractInput" xmi:id="_RE002CIResultado" name="resultadoEstudio"/>
+              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_UdMYMGp2EfGqCp5S24djrw" name="solicitudReconocimiento" dataType="_VhekaVIFEfGLU8K6Mq5TUA" className="com.company.model.SolicitudReconocimiento"/>
+              <referencedElements xmi:type="process:ContractInput" xmi:id="_UdMYMWp2EfGqCp5S24djrw" name="resultadoEstudio" description="Resultado del estudio realizado por el Coordinador de Titulación"/>
             </rightOperand>
             <operator xmi:type="expression:Operator" xmi:id="_RE002OOPResultado" type="ASSIGNMENT"/>
           </operations>
@@ -302,8 +316,8 @@
               <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_RE003BDAsignaturas" name="solicitudReconocimiento" dataType="_VhekaVIFEfGLU8K6Mq5TUA" className="com.company.model.SolicitudReconocimiento"/>
             </leftOperand>
             <rightOperand xmi:type="expression:Expression" xmi:id="_RE003ROAsignaturas" name="setStatusAsignaturas()" content="(asignaturaEstudio ?: []).each { upd ->&#xD;&#xA;&#x9;def found = solicitudReconocimiento.asignatura.find { it.persistenceId == Long.valueOf(upd.persistenceId.toString()) }&#xD;&#xA;&#x9;if (found) {&#xD;&#xA;&#x9;&#x9;found.statusAsignatura = upd.statusAsignatura&#xD;&#xA;&#x9;}&#xD;&#xA;}&#xD;&#xA;return solicitudReconocimiento" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="com.company.model.SolicitudReconocimiento">
-              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_RE003BD2Asignaturas" name="solicitudReconocimiento" dataType="_VhekaVIFEfGLU8K6Mq5TUA" className="com.company.model.SolicitudReconocimiento"/>
-              <referencedElements xmi:type="process:ContractInput" xmi:id="_RE003CIAsignaturas" name="asignaturaEstudio" type="COMPLEX" multiple="true"/>
+              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_U50CwGp2EfGqCp5S24djrw" name="solicitudReconocimiento" dataType="_VhekaVIFEfGLU8K6Mq5TUA" className="com.company.model.SolicitudReconocimiento"/>
+              <referencedElements xmi:type="process:ContractInput" xmi:id="_U50CwWp2EfGqCp5S24djrw" name="asignaturaEstudio" type="COMPLEX" description="Estado actualizado por asignatura (asignado por el Coordinador de Titulación)" multiple="true"/>
             </rightOperand>
             <operator xmi:type="expression:Operator" xmi:id="_RE003OOPAsignaturas" type="ASSIGNMENT"/>
           </operations>
@@ -340,8 +354,8 @@
               <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_SEPS001BDStatus" name="solicitudReconocimiento" dataType="_VhekaVIFEfGLU8K6Mq5TUA" className="com.company.model.SolicitudReconocimiento"/>
             </leftOperand>
             <rightOperand xmi:type="expression:Expression" xmi:id="_SEPS001ROStatus" name="setStatusSolicitud()" content="solicitudReconocimiento.statusSolicitud = statusSolicitud&#xD;&#xA;return solicitudReconocimiento" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="com.company.model.SolicitudReconocimiento">
-              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_SEPS001BD2Status" name="solicitudReconocimiento" dataType="_VhekaVIFEfGLU8K6Mq5TUA" className="com.company.model.SolicitudReconocimiento"/>
-              <referencedElements xmi:type="process:ContractInput" xmi:id="_SEPS001CIStatus" name="statusSolicitud"/>
+              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_V3J0wGp2EfGqCp5S24djrw" name="solicitudReconocimiento" dataType="_VhekaVIFEfGLU8K6Mq5TUA" className="com.company.model.SolicitudReconocimiento"/>
+              <referencedElements xmi:type="process:ContractInput" xmi:id="_V3J0wWp2EfGqCp5S24djrw" name="statusSolicitud" description="Estado final de la solicitud (validado por Secretaría EPS)"/>
             </rightOperand>
             <operator xmi:type="expression:Operator" xmi:id="_SEPS001OOPStatus" type="ASSIGNMENT"/>
           </operations>
