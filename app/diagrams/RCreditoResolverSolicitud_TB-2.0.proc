@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:actormapping="http://www.bonitasoft.org/ns/actormapping/6.0" xmlns:configuration="http://www.bonitasoft.org/ns/bpm/configuration" xmlns:connectorconfiguration="http://www.bonitasoft.org/model/connector/configuration" xmlns:decision="http://www.bonitasoft.org/ns/bpm/process/decision" xmlns:expression="http://www.bonitasoft.org/ns/bpm/expression" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.3/notation" xmlns:process="http://www.bonitasoft.org/ns/bpm/process">
-  <process:MainProcess xmi:id="_Vhej4FIFEfGLU8K6Mq5TUA" name="RCreditoLanzarConvocatoria_TB_Estudiante" version="3.0" bonitaModelVersion="9">
+  <process:MainProcess xmi:id="_Vhej4FIFEfGLU8K6Mq5TUA" name="RCreditoResolverSolicitud_TB" version="2.0" bonitaModelVersion="9">
     <elements xmi:type="process:Pool" xmi:id="_Vhej4VIFEfGLU8K6Mq5TUA" name="Solicitud de reconocimiento de créditos TB" version="2.0" displayName="Solicitud de reconocimiento de créditos TB">
       <elements xmi:type="process:Lane" xmi:id="_Vhej9FIFEfGLU8K6Mq5TUA" name="Estudiante" actor="_y6oEgGcUEfGUpu21oOLYXw">
         <elements xmi:type="process:StartEvent" xmi:id="_Vhej41IFEfGLU8K6Mq5TUA" name="Inicio Registrar Solicitud" outgoing="_0e6OAGdREfGmGuWX0X0qYQ">
