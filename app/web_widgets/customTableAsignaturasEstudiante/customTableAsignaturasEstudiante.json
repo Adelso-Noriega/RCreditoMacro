@@ -47,6 +47,13 @@
       "type" : "boolean",
       "defaultValue" : false,
       "bond" : "expression"
+    },
+    {
+      "label" : "Status editable",
+      "name" : "statusEditable",
+      "type" : "boolean",
+      "defaultValue" : false,
+      "bond" : "expression"
     }
   ],
   "assets" : [ ],

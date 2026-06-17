@@ -20,9 +20,12 @@ function ($scope) {
     $scope.properties.facultades = [];
   }
 
-  if (!angular.isArray($scope.properties.statusOptions)) {
+  if (!angular.isArray($scope.properties.statusOptions) || $scope.properties.statusOptions.length === 0) {
     $scope.properties.statusOptions = [
-      { value: "pendienteRevision", label: "Pendiente Revisión" }
+      { value: "Pendiente Revisión", label: "Pendiente Revisión" },
+      { value: "Aprobada", label: "Aprobada" },
+      { value: "Rechazada", label: "Rechazada" },
+      { value: "Requiere Subsanación", label: "Requiere Subsanación" }
     ];
   }
 

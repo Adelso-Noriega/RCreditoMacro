@@ -84,9 +84,8 @@
         <td>
           <select class="form-control"
                   ng-model="row.statusAsignatura"
-                  ng-disabled="true">
-              <!-- ng-options="item.value as item.label for item in properties.statusOptions" -->
-            <option value="0" selected="true">Pendiente Revisión</option>
+                  ng-disabled="!properties.statusEditable"
+                  ng-options="opt.value as opt.label for opt in properties.statusOptions">
           </select>
         </td>
 

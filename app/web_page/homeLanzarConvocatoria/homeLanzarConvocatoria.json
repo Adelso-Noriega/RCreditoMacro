@@ -4,7 +4,7 @@
   "type" : "page",
   "uuid" : "473f86da-1d35-47de-9792-825412a548f6",
   "modelVersion" : "2.6",
-  "lastUpdate" : 1780619058797,
+  "lastUpdate" : 1781658336341,
   "description" : "Page generated with Bonita UI designer",
   "rows" : [
     [
@@ -382,8 +382,8 @@
               "dimension" : {
                 "xs" : 12,
                 "sm" : 12,
-                "md" : 12,
-                "lg" : 12
+                "md" : 6,
+                "lg" : 6
               },
               "propertyValues" : {
                 "cssClasses" : {
@@ -459,16 +459,14 @@
               "reference" : "5aec8429-11a7-4367-9be3-c3341a62f0f4",
               "hasValidationError" : false,
               "id" : "pbInput"
-            }
-          ],
-          [
+            },
             {
               "type" : "component",
               "dimension" : {
                 "xs" : 12,
                 "sm" : 12,
-                "md" : 12,
-                "lg" : 12
+                "md" : 6,
+                "lg" : 6
               },
               "propertyValues" : {
                 "cssClasses" : {

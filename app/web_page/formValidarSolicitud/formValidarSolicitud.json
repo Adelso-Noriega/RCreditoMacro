@@ -1,10 +1,10 @@
 {
-  "id" : "homeSolicitudReconocimiento",
-  "name" : "homeSolicitudReconocimiento",
-  "type" : "page",
-  "uuid" : "58164f7d-bc05-4617-8e24-b25089e8389e",
+  "id" : "formValidarSolicitud",
+  "name" : "formValidarSolicitud",
+  "type" : "form",
+  "uuid" : "b2f6c9a1-7e4d-4a3b-9f1e-2c8d5a6b7c9e",
   "modelVersion" : "2.6",
-  "lastUpdate" : 1781658295834,
+  "lastUpdate" : 1781658235548,
   "description" : "Page generated with Bonita UI designer",
   "rows" : [
     [
@@ -29,7 +29,7 @@
             "type" : "variable"
           }
         },
-        "reference" : "a9fb7b55-d78c-4764-986b-4dbcee6ee75d",
+        "reference" : "ad8458c1-f8a0-4828-8115-e73597e465bb",
         "hasValidationError" : false,
         "id" : "pbContainer",
         "rows" : [
@@ -57,7 +57,7 @@
                 },
                 "text" : {
                   "type" : "interpolation",
-                  "value" : "Proceso Solicitud Reconocimiento de Créditos"
+                  "value" : "Validar solicitud de reconocimiento de créditos"
                 },
                 "level" : {
                   "type" : "constant",
@@ -68,7 +68,7 @@
                   "value" : "left"
                 }
               },
-              "reference" : "df53e818-c67e-4d68-b091-4d7f018ac153",
+              "reference" : "95abbdea-3d14-419d-aeae-31cf8194f9c1",
               "hasValidationError" : false,
               "id" : "pbTitle"
             }
@@ -98,7 +98,7 @@
             "type" : "variable"
           }
         },
-        "reference" : "7e595d8a-031c-47b0-b2b1-afb1737b7025",
+        "reference" : "09cb3fc1-93ec-4ef5-bb6c-45a8ad30f754",
         "hasValidationError" : false,
         "id" : "pbContainer",
         "rows" : [
@@ -126,7 +126,7 @@
                 },
                 "text" : {
                   "type" : "interpolation",
-                  "value" : "Detalle solicitud de reconocimiento de créditos - {{caseId}} - Convocatoria: {{convocatoriaActiva[0].statusConvocatoria}}"
+                  "value" : "Detalle solicitud - {{caseId}}"
                 },
                 "level" : {
                   "type" : "constant",
@@ -137,7 +137,7 @@
                   "value" : "left"
                 }
               },
-              "reference" : "85c4f9de-75e1-4a3d-8e96-13d1f6bdcb75",
+              "reference" : "c3cbf03d-9153-4f67-b043-ede0f518d274",
               "hasValidationError" : false,
               "id" : "pbTitle"
             }
@@ -222,7 +222,7 @@
                   "value" : 1
                 }
               },
-              "reference" : "46afa2fa-16e5-4715-91ab-45f6acd4c16b",
+              "reference" : "31c583a6-e09d-4235-8c10-f2d3b19c32f1",
               "hasValidationError" : false,
               "id" : "pbInput"
             },
@@ -305,7 +305,7 @@
                   "value" : 1
                 }
               },
-              "reference" : "a991d971-9ce1-45c7-9020-4106fd52d285",
+              "reference" : "409d1329-3527-4e47-af38-bffaf32672d8",
               "hasValidationError" : false,
               "id" : "pbInput"
             }
@@ -390,7 +390,7 @@
                   "value" : 1
                 }
               },
-              "reference" : "2fcadeb7-890d-4f39-bb54-8680d9d0ce47",
+              "reference" : "63abb957-76e5-457c-889c-592f73a05a6c",
               "hasValidationError" : false,
               "id" : "pbInput"
             },
@@ -473,7 +473,7 @@
                   "value" : 1
                 }
               },
-              "reference" : "510b6fd1-82df-4753-98e0-320e6af883c7",
+              "reference" : "ad5b4af7-8b82-471c-9842-964af9471395",
               "hasValidationError" : false,
               "id" : "pbInput"
             }
@@ -514,7 +514,7 @@
                 },
                 "readOnly" : {
                   "type" : "constant",
-                  "value" : false
+                  "value" : true
                 },
                 "labelHidden" : {
                   "type" : "constant",
@@ -558,7 +558,7 @@
                   "value" : 1
                 }
               },
-              "reference" : "be1be414-3d28-4932-bc21-fc5dd0c2be20",
+              "reference" : "52a56081-05b7-430e-9e00-f40d2baf9874",
               "hasValidationError" : false,
               "id" : "pbInput"
             }
@@ -610,7 +610,7 @@
                   "value" : true
                 }
               },
-              "reference" : "4e6a8ae2-48fb-48f6-b497-2424fcfe3bc5",
+              "reference" : "9a60e2a9-7776-4c2d-a2fe-3901677b078d",
               "hasValidationError" : false,
               "id" : "customTableAsignaturasEstudiante"
             }
@@ -650,7 +650,7 @@
                   "value" : "left"
                 }
               },
-              "reference" : "92f2fba7-84ce-4635-96c6-3940f5105b98",
+              "reference" : "11769663-2d13-4125-90eb-3143725d46cf",
               "hasValidationError" : false,
               "id" : "pbTitle"
             }
@@ -678,7 +678,7 @@
                   "value" : "certificadoCalificaciones"
                 }
               },
-              "reference" : "0bfd31af-2d28-42ca-9fb4-47378960a4af",
+              "reference" : "c4f4c938-ad0e-43ac-9a93-c1ab89f24acd",
               "hasValidationError" : false,
               "id" : "pbContainer",
               "rows" : [
@@ -750,55 +750,373 @@
                         "value" : "link"
                       }
                     },
-                    "reference" : "88805455-4af3-4516-8019-6adc7d8357b0",
+                    "reference" : "f6590549-a7ac-401d-a4f2-0eb84c3a070d",
                     "hasValidationError" : false,
                     "id" : "pbLink"
                   }
                 ]
               ]
             }
+          ],
+          [
+            {
+              "type" : "component",
+              "dimension" : {
+                "xs" : 12,
+                "sm" : 12,
+                "md" : 12,
+                "lg" : 12
+              },
+              "propertyValues" : {
+                "cssClasses" : {
+                  "type" : "constant",
+                  "value" : ""
+                },
+                "hidden" : {
+                  "type" : "constant",
+                  "value" : false
+                },
+                "allowHTML" : {
+                  "type" : "constant",
+                  "value" : false
+                },
+                "text" : {
+                  "type" : "interpolation",
+                  "value" : "Validación de la solicitud"
+                },
+                "level" : {
+                  "type" : "constant",
+                  "value" : "Level 4"
+                },
+                "alignment" : {
+                  "type" : "constant",
+                  "value" : "left"
+                }
+              },
+              "reference" : "bf29b497-c907-4536-a7bc-133346130379",
+              "hasValidationError" : false,
+              "id" : "pbTitle"
+            }
+          ],
+          [
+            {
+              "type" : "component",
+              "dimension" : {
+                "xs" : 12,
+                "sm" : 12,
+                "md" : 12,
+                "lg" : 12
+              },
+              "propertyValues" : {
+                "cssClasses" : {
+                  "type" : "constant",
+                  "value" : ""
+                },
+                "hidden" : {
+                  "type" : "constant",
+                  "value" : false
+                },
+                "disabled" : {
+                  "type" : "constant",
+                  "value" : false
+                },
+                "required" : {
+                  "type" : "constant",
+                  "value" : true
+                },
+                "allowHTML" : {
+                  "type" : "constant",
+                  "value" : false
+                },
+                "labelHidden" : {
+                  "type" : "constant",
+                  "value" : false
+                },
+                "label" : {
+                  "type" : "interpolation",
+                  "value" : "Modificar estado de la solicitud"
+                },
+                "labelPosition" : {
+                  "type" : "constant",
+                  "value" : "top"
+                },
+                "labelWidth" : {
+                  "type" : "constant",
+                  "value" : 4
+                },
+                "placeholder" : {
+                  "type" : "interpolation",
+                  "value" : "Seleccione un estado"
+                },
+                "availableValues" : {
+                  "type" : "constant",
+                  "value" : [
+                    "Validada",
+                    "Requiere Subsanación"
+                  ]
+                },
+                "displayedKey" : {
+                  "type" : "constant"
+                },
+                "returnedKey" : {
+                  "type" : "constant"
+                },
+                "value" : {
+                  "type" : "variable",
+                  "value" : "detalleSolicitud.statusSolicitud"
+                }
+              },
+              "reference" : "a610a156-778b-49dd-9045-63b6bd2a5b3c",
+              "hasValidationError" : false,
+              "id" : "pbSelect"
+            }
+          ],
+          [
+            {
+              "type" : "component",
+              "dimension" : {
+                "xs" : 12,
+                "sm" : 12,
+                "md" : 12,
+                "lg" : 12
+              },
+              "propertyValues" : {
+                "cssClasses" : {
+                  "type" : "constant",
+                  "value" : ""
+                },
+                "hidden" : {
+                  "type" : "expression",
+                  "value" : "detalleSolicitud.statusSolicitud !== 'Requiere Subsanación'"
+                },
+                "required" : {
+                  "type" : "expression",
+                  "value" : "detalleSolicitud.statusSolicitud === 'Requiere Subsanación'"
+                },
+                "allowHTML" : {
+                  "type" : "constant",
+                  "value" : false
+                },
+                "labelHidden" : {
+                  "type" : "constant",
+                  "value" : false
+                },
+                "label" : {
+                  "type" : "interpolation",
+                  "value" : "Comentarios de subsanación"
+                },
+                "labelPosition" : {
+                  "type" : "constant",
+                  "value" : "top"
+                },
+                "labelWidth" : {
+                  "type" : "constant",
+                  "value" : 4
+                },
+                "placeholder" : {
+                  "type" : "interpolation",
+                  "value" : "Indique al estudiante qué debe corregir"
+                },
+                "value" : {
+                  "type" : "variable",
+                  "value" : "detalleSolicitud.comentariosSubsanacion"
+                },
+                "rows" : {
+                  "type" : "constant",
+                  "value" : 4
+                },
+                "debounce" : {
+                  "type" : "constant",
+                  "value" : 0
+                },
+                "maxLength" : {
+                  "type" : "constant",
+                  "value" : ""
+                }
+              },
+              "reference" : "c1d8f2a4-5b6c-47de-9a1f-3e7b8c9d0e1f",
+              "hasValidationError" : false,
+              "id" : "pbTextarea",
+              "description" : ""
+            }
           ]
         ]
+      }
+    ],
+    [
+      {
+        "type" : "component",
+        "dimension" : {
+          "xs" : 12,
+          "sm" : 12,
+          "md" : 12,
+          "lg" : 12
+        },
+        "propertyValues" : {
+          "allowHTML" : {
+            "type" : "constant",
+            "value" : true
+          },
+          "allowHtml" : {
+            "type" : "constant",
+            "value" : true
+          },
+          "labelHidden" : {
+            "type" : "constant",
+            "value" : true
+          },
+          "hidden" : {
+            "type" : "expression",
+            "value" : "!formOutput._submitError.message"
+          },
+          "cssClasses" : {
+            "type" : "constant",
+            "value" : "alert alert-danger col-lg-6 col-lg-offset-3"
+          },
+          "label" : {
+            "type" : "interpolation"
+          },
+          "text" : {
+            "type" : "interpolation",
+            "value" : "<strong>Debug message</strong>\n<br/>\n{{formOutput._submitError.message}}\n{{submit_errors_list}}"
+          },
+          "alignment" : {
+            "type" : "constant",
+            "value" : "left"
+          },
+          "dimension" : {
+            "type" : "constant",
+            "value" : 12
+          }
+        },
+        "reference" : "18d0a030-f324-4ee9-8fc3-139105b5c57d",
+        "hasValidationError" : false,
+        "id" : "pbText",
+        "description" : ""
+      }
+    ],
+    [
+      {
+        "type" : "component",
+        "dimension" : {
+          "xs" : 12,
+          "sm" : 12,
+          "md" : 12,
+          "lg" : 12
+        },
+        "propertyValues" : {
+          "removeItem" : {
+            "type" : "variable"
+          },
+          "hidden" : {
+            "type" : "constant",
+            "value" : false
+          },
+          "cssClasses" : {
+            "type" : "constant",
+            "value" : ""
+          },
+          "buttonStyle" : {
+            "type" : "constant",
+            "value" : "success"
+          },
+          "label" : {
+            "type" : "interpolation",
+            "value" : "Procesar"
+          },
+          "dataToSend" : {
+            "type" : "variable",
+            "value" : "formOutput"
+          },
+          "dataFromError" : {
+            "type" : "variable",
+            "value" : "formOutput._submitError"
+          },
+          "allowHTML" : {
+            "type" : "constant",
+            "value" : false
+          },
+          "labelHidden" : {
+            "type" : "constant",
+            "value" : false
+          },
+          "collectionPosition" : {
+            "type" : "constant"
+          },
+          "targetUrlOnSuccess" : {
+            "type" : "interpolation",
+            "value" : ""
+          },
+          "action" : {
+            "type" : "constant",
+            "value" : "Submit task"
+          },
+          "collectionToModify" : {
+            "type" : "variable"
+          },
+          "valueToAdd" : {
+            "type" : "expression"
+          },
+          "disabled" : {
+            "type" : "expression",
+            "value" : "$form.$invalid"
+          },
+          "alignment" : {
+            "type" : "constant",
+            "value" : "center"
+          },
+          "dimension" : {
+            "type" : "constant",
+            "value" : 12
+          },
+          "assign" : {
+            "type" : "constant",
+            "value" : false
+          },
+          "url" : {
+            "type" : "interpolation"
+          },
+          "responseStatusCode" : {
+            "type" : "variable"
+          },
+          "dataFromSuccess" : {
+            "type" : "variable"
+          },
+          "closeOnSuccess" : {
+            "type" : "constant",
+            "value" : false
+          },
+          "modalId" : {
+            "type" : "constant",
+            "value" : ""
+          }
+        },
+        "reference" : "a3dedcd4-ab8e-41bf-ade8-7aeaba69565f",
+        "hasValidationError" : false,
+        "id" : "pbButton",
+        "description" : ""
       }
     ]
   ],
   "variables" : {
-    "isComisionRCC" : {
-      "type" : "expression",
+    "taskId" : {
+      "type" : "urlparameter",
       "value" : [
-        "$data.memberships.some(function(m) {",
-        "  return m.role_id.displayName === \"ComisionRCC\";",
-        "})"
+        "id"
       ],
       "exposed" : false
     },
-    "isEstudiante" : {
-      "type" : "expression",
-      "value" : [
-        "$data.memberships.some(function(m) {",
-        "  return m.role_id.displayName === \"Estudiante\";",
-        "})"
-      ],
-      "exposed" : false
-    },
-    "memberships" : {
+    "taskData" : {
       "type" : "url",
       "value" : [
-        "../API/identity/membership?p=0&c=100&f=user_id={{session.user_id}}"
-      ],
-      "exposed" : false
-    },
-    "session" : {
-      "type" : "url",
-      "value" : [
-        "../API/system/session/unusedId"
+        "../API/bpm/userTask/{{taskId}}"
       ],
       "exposed" : false
     },
     "caseId" : {
-      "type" : "urlparameter",
+      "type" : "expression",
       "value" : [
-        "id"
+        "return $data.taskData ? $data.taskData.caseId : null;"
       ],
       "exposed" : false
     },
@@ -823,47 +1141,51 @@
       ],
       "exposed" : false
     },
-    "convocatoriaActiva" : {
-      "type" : "url",
-      "value" : [
-        "../API/bdm/businessData/com.company.model.Convocatoria?q=findByStatusConvocatoria&p=0&c=1&f=statusConvocatoria=Abierta"
-      ],
-      "exposed" : false
-    },
-    "certificadoCalificacionesActivo" : {
+    "certificadoCalificaciones" : {
       "type" : "url",
       "value" : [
         "../API/bpm/caseDocument?p=0&c=10&f=caseId={{caseId}}&f=name=certificadoCalificaciones"
       ],
       "exposed" : false
     },
-    "certificadoCalificacionesArchivado" : {
-      "type" : "url",
+    "formOutput" : {
+      "type" : "expression",
       "value" : [
-        "../API/bpm/archivedCaseDocument?p=0&c=10&f=caseId={{caseId}}&f=name=certificadoCalificaciones"
+        "return {",
+        "  statusSolicitud: $data.detalleSolicitud ? $data.detalleSolicitud.statusSolicitud : null,",
+        "  comentariosSubsanacion: ($data.detalleSolicitud && $data.detalleSolicitud.statusSolicitud === 'Requiere Subsanación') ? $data.detalleSolicitud.comentariosSubsanacion : null",
+        "};"
       ],
       "exposed" : false
     },
-    "certificadoCalificaciones" : {
+    "submit_errors_list" : {
       "type" : "expression",
       "value" : [
-        "return ($data.certificadoCalificacionesActivo || []).concat($data.certificadoCalificacionesArchivado || []);"
+        "if($data.formOutput && $data.formOutput._submitError && $data.formOutput._submitError.explanations){",
+        "\tconst liElements = $data.formOutput._submitError.explanations",
+        "\t\t.filter(cause => cause !== null)",
+        "\t\t.map(cause => \"<li>\" + cause + \"</li>\")",
+        "\t\t.join('');",
+        "\tif(liElements){",
+        "\t\treturn \"<ul>\" + liElements + \"</ul>\";",
+        "\t}",
+        "}"
       ],
       "exposed" : false
     }
   },
   "assets" : [
     {
-      "id" : "fb5c559f-60c7-459d-9abf-a333301c6ff4",
-      "name" : "localization.json",
-      "type" : "json",
+      "id" : "c334e834-903f-40eb-8a6a-54da497dca42",
+      "name" : "style.css",
+      "type" : "css",
       "order" : 0,
       "external" : false
     },
     {
-      "id" : "f7592aa4-8aab-4fc3-9179-6a72967ab4c4",
-      "name" : "style.css",
-      "type" : "css",
+      "id" : "7918bb32-3020-48dc-b3e7-2c41aac0aa01",
+      "name" : "localization.json",
+      "type" : "json",
       "order" : 0,
       "external" : false
     }

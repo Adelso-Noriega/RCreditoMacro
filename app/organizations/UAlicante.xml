@@ -25,6 +25,18 @@
       <password encrypted="false">bpm</password>
       <customUserInfoValues/>
     </user>
+    <user userName="AgenteIA">
+      <personalData/>
+      <professionalData/>
+      <password encrypted="false">bpm</password>
+      <customUserInfoValues/>
+    </user>
+    <user userName="Coordinador">
+      <personalData/>
+      <professionalData/>
+      <password encrypted="false">bpm</password>
+      <customUserInfoValues/>
+    </user>
   </users>
   <roles>
     <role name="secretariaEPS">
@@ -35,6 +47,12 @@
     </role>
     <role name="estudiante">
       <displayName>Estudiante</displayName>
+    </role>
+    <role name="IA">
+      <displayName>IA</displayName>
+    </role>
+    <role name="coordinadorTitulacion">
+      <displayName>Coordinador Titulaci&#xf3;n</displayName>
     </role>
   </roles>
   <groups>
@@ -59,6 +77,16 @@
     <membership>
       <userName>ComisionRCC</userName>
       <roleName>comisionRCC</roleName>
+      <groupName>UAlicante</groupName>
+    </membership>
+    <membership>
+      <userName>AgenteIA</userName>
+      <roleName>IA</roleName>
+      <groupName>UAlicante</groupName>
+    </membership>
+    <membership>
+      <userName>Coordinador</userName>
+      <roleName>coordinadorTitulacion</roleName>
       <groupName>UAlicante</groupName>
     </membership>
   </memberships>
