@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:decision="http://www.bonitasoft.org/ns/bpm/process/decision" xmlns:expression="http://www.bonitasoft.org/ns/bpm/expression" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.3/notation" xmlns:process="http://www.bonitasoft.org/ns/bpm/process">
-  <process:MainProcess xmi:id="_Kq9wsE-9EfGGR-WLMxJZPg" name="RCreditoLanzarConvocatoria_TB_CRCC" bonitaModelVersion="9">
-    <elements xmi:type="process:Pool" xmi:id="_Kq9wsU-9EfGGR-WLMxJZPg" name="Lanzar Convocatoria TB" displayName="Lanzar Convocatoria TB">
-      <elements xmi:type="process:Lane" xmi:id="_Kq9wsk-9EfGGR-WLMxJZPg" name="Comisión de Reconocimiento de Créditos" actor="_QvkXgGdjEfGmGuWX0X0qYQ">
+  <process:MainProcess xmi:id="_Kq9wsE-9EfGGR-WLMxJZPg" name="RCreditoLanzarConvocatoria_TB" bonitaModelVersion="9">
+    <elements xmi:type="process:Pool" xmi:id="_Kq9wsU-9EfGGR-WLMxJZPg" name="Lanzar convocatoria TB" version="2.0" displayName="Lanzar convocatoria TB">
+      <elements xmi:type="process:Lane" xmi:id="_Kq9wsk-9EfGGR-WLMxJZPg" name="Secretaria EPS" actor="_QvkXgGdjEfGmGuWX0X0qYQ">
         <elements xmi:type="process:StartEvent" xmi:id="_Kq9ws0-9EfGGR-WLMxJZPg" name="Inicio Lanzar Convocatoria" outgoing="_Kq-X7U-9EfGGR-WLMxJZPg">
           <dynamicLabel xmi:type="expression:Expression" xmi:id="_Kq9wtE-9EfGGR-WLMxJZPg" name="" content="" returnTypeFixed="true"/>
           <dynamicDescription xmi:type="expression:Expression" xmi:id="_Kq9wtU-9EfGGR-WLMxJZPg" name="" content="" returnTypeFixed="true"/>
